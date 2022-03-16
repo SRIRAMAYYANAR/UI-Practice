@@ -1,0 +1,19 @@
+Data types 
+   primitive datatypes
+      -string
+      -number
+      -bigint
+      -boolean
+   trivial datatypes
+      -undefined
+      -NaN
+   composite datatypes
+      -object
+      -Array
+      -function
+
+
+      
+      var - ES5
+      const-ES6
+      let -ES6
