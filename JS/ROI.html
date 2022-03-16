@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right:0;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        div table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #btn{
+            padding:10px 30px;
+            font-size:18px;
+            border-radius: 10px;
+            color: white;
+            background-color:rgb(66, 153, 253);
+            border: 2px solid white;
+        }
+        input[type="text"],select{
+            padding: 5px;
+            border: 2px solid rgb(196, 196, 196);
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .ans{
+            background-color:rgb(206, 206, 206,0.5)
+        }
+        .ans input{
+            border:none !important;
+            outline: none !important;
+            font-weight:bold;
+            font-size:20px;
+            background:none;
+            color:rgb(56, 150, 92);
+        }
+        .ans label{
+            font-weight: bold;
+        }
+        label{
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+<body>  
+
+    <div>
+        <img src = "https://image.shutterstock.com/image-vector/pocket-cash-money-pile-coin-260nw-1695213931.jpg">
+    <form id = "form">
+        <table width="50%"cellpadding="10">
+            <caption><h1>Simple Interest Calculator</h1></caption>
+            <tr>
+                <td><label for = "amt">AMOUNT</label></td>
+                <td><input type ="text" id = "amt" value = "1000" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td><label for = "prd">PERIOD</label></td>
+                <td>
+                    <input type ="text" id = "prd" value="1" style = "width:20%"> 
+                    <select name="days" id="days" style = "width:36%">
+                        <option value="Days">DAYS</option>
+                        <option value="Weeks">WEEKS</option>
+                        <option value="Months">MONTHS</option>
+                        <option value="Years">YEARS</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for = "roi">RATE OF INTEREST</label></td>
+                <td><input type ="text" id = "roi" value ="3"></td>
+            </tr>
+            <tr >
+                <td colspan = "2" style ="text-align:center;"><input type ="button" id = "btn" onclick ="calci()" value ="Calculate"></td>
+            </tr>
+            <tr class ="ans">
+                <td><label for = "amt">ORIGINAL AMOUNT</label></td>
+                <td><input type ="text" id = "oriAmt" readonly></td>
+            </tr>
+            <tr class ="ans">
+                <td><label for = "amt">INTEREST AMOUNT</label></td>
+                <td><input type ="text" id = "inAmt" readonly></td>
+            </tr>
+            <tr class ="ans">
+                <td><label for = "amt">TOTAL AMOUNT</label></td>
+                <td><input type ="text" id = "toAmt" readonly></td>
+            </tr>
+        </table>
+        <hr/>
+    </form>
+    </div>
+    <script>
+        function calci(){
+
+            var amount = document.getElementById("amt").value;
+            var periodNum = document.getElementById ("prd").value;
+            var period = document.getElementById ("days").value;
+            var rate_of_interest = document.getElementById ("roi").value;
+            var original_amount = document.getElementById("oriAmt").value = amount +" Rupee";
+            
+            if (period == "Years"){
+                interest_amount = 365*periodNum*rate_of_interest +" Rupee";
+            }
+            else if(period == "Months"){
+                interest_amount = 30*periodNum*rate_of_interest +" Rupee";
+            }
+            else if(period == "Weeks"){
+                interest_amount = 7*periodNum*rate_of_interest +" Rupee";
+            }
+            else{
+                interest_amount = 1*periodNum*rate_of_interest +" Rupee";
+            }
+
+            var total_amount = document.getElementById ("toAmt").value = parseInt(interest_amount)+parseInt(original_amount)+" Rupee";
+            document.getElementById ("inAmt").value = interest_amount;
+        }
+        calci();
+    </script>
+</body>
+</html>

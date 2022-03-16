@@ -1,0 +1,104 @@
+<!-- <html>
+    <head>
+        <title>Duplicate</title>
+    </head>
+   
+    <body>
+        <input type="button" value="click" onclick="duplicate()">
+        <br>
+        Duplicate : <div id="duplicate"></div>
+        <script>
+            function duplicate(){
+                var array=[2,3,1,4,2,3]
+                for(var x=0;x<=array.length-1;x++){
+                    for(var y=x+1;y<=array.length-1;y++){
+                        if(array[x]==array[y]){
+                            document.getElementById("duplicate").innerHTML+=array[x];
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html> -->
+
+<!-- <html>  
+    <body>  
+<input type="button" value="get" onclick="duplicates()"/><br>
+real array:<p id="a1"> </p>
+
+
+
+
+
+        <script>    
+        function duplicates(){  
+            var numbers=[1,1,2,3,4,5,5]
+         
+            for( a=0; a<numbers.length; a++){
+                 for( var b=a+1;b<numbers.length;b++)
+                 {
+                if (numbers[a]==numbers[b])
+                document.getElementById("a1").innerHTML+=numbers[a];
+                 }
+              }
+          }
+        
+        
+        
+        
+        
+        </script>
+    </body>
+</html> -->
+
+<!-- =====================================  -->
+
+
+
+
+
+
+<html> 
+
+<body>
+<table>
+<tr>
+<td> <input type="text" name="a" id="string" placeholder="Enter string"> </td>
+</tr>
+<tr>
+<td> <button onclick="palindrome ()" >Submit</button> </td>
+</tr>
+</table>
+<div id="a1"></div>
+<div id="a2"> </div>
+</body>
+
+
+
+<script>
+function palindrome()
+{
+    var reverse = '';
+    var string = document.getElementById ('string').value;
+
+    for(  i=0; i>=string.length-1; i--)
+        {
+              reverse = reverse+(string[i]);
+        }
+    if(string==reverse)
+        {
+           document.getElementById ('a1').innerHTML ="Given string is a palindrome";
+        }
+     else
+         {
+           document.getElementById('a2').innerHTML ="Given string is not a palindrome";
+         }
+}
+
+    
+        </script>
+     </body>
+    </html>
+
+

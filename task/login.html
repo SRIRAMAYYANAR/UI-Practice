@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/dc0e34c78e.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(226, 225, 225,0.5);
+        }
+        #secondBody{
+            margin: 50px 15% 50px 15% ;
+        }
+        #head{
+            background-color: rgb(255, 196, 35); 
+            border-radius: 30px;
+            padding: 1px;
+        }
+       #head li{
+            list-style-type: none;
+            display:inline;
+            font-size: 20px;
+        }
+        #a{
+            background-color:sandybrown;
+            display: flex;
+            padding:10%; 
+            margin-top:30px;
+            border-radius:30px;
+        }
+        .sectionDiv1{
+            font-size:40px;
+            color:white;
+            width:40%;
+        }
+        .sectionDiv2{
+            font-size:40px;
+            color:white;
+            width:60%;  
+            margin-left:20%;
+            background-color:rgb(204, 204, 204,0.5);
+            padding:50px 0 50px 50px;
+        }
+        input[type = text],input[type = password]{
+            width:70%;
+            padding:10px;
+            outline:none;
+            border:none;
+            background: none;
+            border-bottom:2px solid rgb(255, 196, 35);
+            color:white;
+            font-size: 15px;   
+        }
+        #name:focus,#password:focus{
+            border-bottom: 2px solid rgb(255, 0, 0,0.5);
+        }
+        #name:hover,#password:hover{
+            border-bottom:2px solid rgb(255, 0, 0,0.5);
+        }
+        #btn{
+            background-color:rgb(255, 196, 35,0.8);
+            border:2px solid white;
+            padding:15px;
+            border-radius:10px;
+            font-size: 15px;
+            color:white;
+            margin-top:25px ;
+            width:80%;
+        }
+    </style>
+</head> 
+<body>
+    <div id ="secondBody">
+        <!-- heading -->
+        <div id = "head">
+            <div >
+                <ul>
+                    <li style="margin-left:34%;">
+                        <img src ="https://www.mookambikainfo.com/wp-content/uploads/2021/07/Logo.png" alt="smi" width="100px" height="50px">
+                    </li>
+                    <li style ="float:right;margin:15px 36% 0 0">
+                        SMI - User Login
+                    </li>
+                </ul>
+            </div>
+        </div>  
+
+        <div id ="a">
+            <div class = "sectionDiv1" >
+                <i class="fa fa-user fa-5x" aria-hidden="true" style = "background-color: #ccc;padding:20px 45px;border-radius:50%;"></i>
+            </div>
+            <div class = "sectionDiv2" >
+                <form>
+                    <input type = "text" id="name"  autocomplete="off"  placeholder="User Name"required ><br/>   
+                    <input type = "password" id="password" placeholder="Password" style ="margin-top:25px ;" required>
+                    <input type = "button" id = "btn" value = "SUBMIT">   
+                </form>
+            </div>
+        </div>   
+    </div>
+</body>
+</html>

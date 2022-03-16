@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LOGIN</title>
+    </head>
+    <style>
+        body{
+            background-image: url('https://www.royalenfield.com/content/dam/royal-enfield/india/login/login-banner.webp');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .header{
+            color: #ddaa00;
+            font-size: 20px;
+            border: 5px solid #F5DEB320;
+            border-style: solid;
+            width: 65%;
+            height: 40px;
+            padding: 20px;
+            border-radius: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            background-color: #F5DEB340;
+            text-shadow: 2px 4px 10px#E0AA3E;
+            transform: translate(0px,20px);
+        }
+        #header1{
+            border: 5px solid #F5DEB310;
+            border-style: solid;
+            width: 50%;
+            height: 250px;
+            padding: 80px;
+            border-radius: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #F5DEB330;
+        }
+        .image1{
+           float: left;
+           padding-bottom: 30px;
+        }
+        .head1{
+            float:  right;
+            text-align: center;
+            color: white;
+        }
+       #uname:focus, #password:focus, #submit:focus{
+            background-color:turquoise !important;
+        }
+        
+    </style>
+    <body>
+       <div class="header">
+           <h2 style="transform: translate(0px,-20px);">
+            Log in to your Royal Enfield account
+           </h2>
+       </div>
+       <br><br><br><br><br>
+        <div id="header1">
+            <div class="image1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk7OqseTAgnksHt9igHh12ZP4GnqN6O2gEpg&usqp=CAU"
+                style="border:2px solid wheat; border-radius:100px">
+            </div>
+            <div class="head1">
+                <form>
+                    <label for="uname">User Name :</label><br>
+                    <input type="text" id="uname" name = "uname" ><br>
+                    <br>
+                    <label for="password">Password :</label><br>
+                    <input type="password" id="password" ><br>
+                    <br>
+                    <input type="submit" id="submit" class="submit"value="submit">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

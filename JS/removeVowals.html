@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="click" onclick ="sri()"><br/>
+    <div id ="string"></div>
+    <script>
+        function sri(){
+            var userString = prompt("enter your text");
+            var string = "";
+            for(let i = 0 ; i<userString.length; i++) {
+                if(userString[i] != "a" && userString[i] != "e" && userString[i] != "i" && userString[i] != "o" && userString[i] != "u"){
+                  string += userString[i];
+                }
+            }
+            document.getElementById ("string").innerHTML = string;
+        }
+    </script>
+</body>
+</html>

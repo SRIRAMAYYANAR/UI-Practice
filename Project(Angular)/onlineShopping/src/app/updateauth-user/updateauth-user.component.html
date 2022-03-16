@@ -1,0 +1,33 @@
+<div>
+
+    <h3 style="position: absolute;left:45%;font-weight:bold;font-size:20px">Update Auth State</h3>
+    <button id="mybtn" mat-button mat-dialog-close><mat-icon>close</mat-icon></button> 
+    <mat-dialog-content class="mat-typography" class="mt-3">
+        <form (ngSubmit)="getAuth()" #get="ngForm">
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>User Id</mat-label>
+                <input matInput type="text" id="uid" name="uid" [(ngModel)]="usr.uid">
+            </mat-form-field>
+            <input type="submit" class="form-control bg-primary text-white" value="Search" style="float: left">
+        </form>  
+
+        <form  *ngIf="ausr!=''" (ngSubmit)="updateAuth()" #update="ngForm">
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>User Name</mat-label>
+                <input matInput type="text" name="uname" [(ngModel)]="ausr.uname" disabled>
+            </mat-form-field>
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>User State</mat-label>
+                <input matInput type="text" name="uenabled" [(ngModel)]="ausr.uenabled">
+            </mat-form-field>
+
+           <input type="submit" class="form-control bg-primary text-white w-50 " style="float: left">
+           <input type="reset" class="form-control bg-secondary text-white w-50">
+           
+        </form>
+    </mat-dialog-content>
+</div>
+
+

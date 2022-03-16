@@ -1,0 +1,72 @@
+/* #myForm{
+    background-color: rgb(235, 230, 224,0.5);
+    position: absolute;
+    transform:translate(30em, 7em);
+    padding:20px 50px;
+    border-radius:10px;
+    }
+.btn{
+    margin : 0 0 0 30%;
+    background-color:hsl(39, 72%, 62%);
+    padding:12px 20px;
+    font-size:15px;
+    font-style : italic;
+    font-weight:bold;
+    border-radius:10px;
+}
+input{
+    margin-bottom: 15px;
+    border:none;
+    outline:none;
+    background: none;
+    color:yellow;
+    font-size: 17px;
+    font-weight:bold;
+    padding: 10px;
+    border-bottom: 1px solid lightgreen;
+}
+#error{
+    color: red;
+    height:70px;
+    font-size:18px;
+    text-align:center;
+    text-decoration :underline;
+}
+.reg-input:focus{
+    border-bottom:1px solid red;
+}
+#page-href a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    padding:0 10px;
+}
+#page-href a:last-child{
+    color:white;
+    text-decoration:none;
+    font-size:30px;
+    border-bottom:5px solid hsl(39, 72%, 62%);
+}
+#reg-error{
+    font-size:20px;
+    color:red;
+    text-align:center;
+}
+#reg-sub{
+    color: white;
+} */
+
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+mat-form-field{
+    width:100%;
+}
+.name{
+    width:49%;
+}
+#mybtn{
+    position: relative;
+    left: 88%;
+    top: 0%;
+}

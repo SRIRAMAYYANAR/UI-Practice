@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #result{
+        font-size:50px;
+        letter-spacing:20px;
+    }
+</style>
+<body>
+    <table cellspacing="0" cellpadding="10">
+        <tr>
+            <td>
+                <label for="tBtn">If you need half Triangle </label>
+            </td>
+            <td>
+                <input type="button" id ="hBtn" value="Click">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="fBtn">If you need right Triangle </label>
+            </td>
+            <td>
+                <input type="button" id ="rBtn" value="Click">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="cBtn">If you need star with number </label>
+            </td>
+            <td>
+                <input type="button" id ="cBtn" value="Click">
+            </td>
+        </tr>
+    </table>
+
+    <div id="result"></div>
+    <script>
+        var btn_one = document.getElementById("hBtn");
+        var btn_two = document.getElementById("rBtn");
+        var btn_three = document.getElementById("cBtn");
+        var result = document.getElementById("result");
+
+        btn_one.onclick =function (){
+            var sym = prompt("enter anything(atleast 5 characters)");
+            var symbol = "";
+            result.innerHTML ="";
+            for(var i =0;i<sym.length;i++){
+                symbol += " " +sym[i];
+                result.innerHTML += symbol +"<br/>";
+            }
+        }
+
+        btn_two.onclick =function (){
+            let symbol = "";
+            for (let i = 1; i < 6; i++) {
+                for (let j = 0; j < i; j++) {
+                    symbol += "*";
+                }
+                symbol += "<br/>";
+            }
+            for (let i = 1; i < 5; i++) {
+                for (let j = 0; j < 5- i; j++) {
+                    symbol += "*";
+                }
+                symbol += "<br/>";
+            }
+            // console.log(string);
+            document.getElementById("result").innerHTML = symbol;
+        }
+
+        btn_three.onclick = function (){
+            var num ="";
+            for(var i =1;i<6; i++){
+                for(var j = 1; j<6;j++){
+                    if(i==j){
+                        num += i;
+                    }
+                    else{
+                        num += "*";
+                    }
+                }
+                num += "<br/>";
+            }
+            result.innerHTML = num;
+        }
+    </script>
+    
+</body>
+</html>

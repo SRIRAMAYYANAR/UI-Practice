@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Permanent+Marker&family=Press+Start+2P&family=Rampart+One&display=swap" rel="stylesheet">
+    
+    <title></title>
+    <style>
+        #click{
+            background-color: rgb(78, 78, 252);
+            color:white;
+            padding:10px;
+            border-radius: 10px;
+        }
+        #cancel{
+            padding:10px;
+            border-radius: 10px;
+        }
+        sub{
+            color:red;
+        }
+        .a:hover{
+            background-color:yellowgreen;
+            color:white;
+            padding:10px;
+        }
+        body{
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- see the line no 329 -->
+    <a name ="go_top"></a>
+    <a href ="#go_bottom" class ="a">Go Bottom </a>
+
+    <!-- Create a webpage that prints your name to the screen. -->
+    <h1>Hii EveryOne!.. I am Sriram</h1>
+    <hr style="border:1px light gray">
+
+    <div>
+        <!-- Create a webpage that prints the numbers 1 - 10 to the screen. -->
+        <!-- <p>01</br>02</br>03</br>04</br>05</br>06</br>07</br>08</br>09</br>10</br></p> -->
+        <p style = "color:rgb(255, 38, 0,1.0)">01</p>
+        <p style = "color:rgb(255, 38, 0,0.9)">02</p>
+        <p style = "color:rgb(255, 38, 0,0.8)">03</p>
+        <p style = "color:rgb(255, 38, 0,0.7)">04</p>
+        <p style = "color:rgb(255, 38, 0,0.6)">05</p>
+        <p style = "color:rgb(255, 38, 0,0.5)">06</p>
+        <p style = "color:rgb(255, 38, 0,0.4)">07</p>
+        <p style = "color:rgb(255, 38, 0,0.3)">08</p>
+        <p style = "color:rgb(255, 38, 0,0.2)">09</p>
+        <p style = "color:rgb(255, 38, 0,0.1)">10</p>
+        <hr style="border:1px light gray">
+    </div>
+
+ <!-- Create a webpage and set its title to "This is a webpage". -->
+    <div>
+        If you click the button, see the changes from window or titlebar
+        <button type="button" onclick = "title_1()" id ="click">Click Me!</button>
+        <button type="button" onclick = "document.title = 'This is a webpage'" id ="cancel">Cancel</button>
+        <hr style="border:1px light gray">
+        <script>
+            
+            document.title = "This is a webpage";
+
+
+        // Create a webpage that prints the message "When was this webpage created? Check
+        // page's title for the answer." to the screen, and set the title of the page to the current
+        // date.
+
+            function title_1(){
+                var month =["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+                var date = new Date();
+                var month_arr = date.getMonth();
+                var date_arr = date.getDate();
+                var year_arr = date.getFullYear();
+                document.title =month[month_arr] + " " + date_arr+ ", " + year_arr;
+            }
+        </script>
+    </div>
+    
+
+    <!-- Print your name in green -->
+    <p style = "color:green">SRIRAM </p>
+    <hr style="border:1px light black">
+
+ <!-- Print the numbers 1 - 10, each number being a different color. -->
+    <div>
+        <p style = "color:rgb(255, 38, 0)">01</p>
+        <p style = "color:rgb(247, 0, 255)">02</p>
+        <p style = "color:rgb(24, 166, 223)">03</p>
+        <p style = "color:rgb(3, 2, 2)">     04</p>
+        <p style = "color:rgb(67, 21, 151)">05</p>
+        <p style = "color:rgb(158, 54, 19)">06</p>
+        <p style = "color:rgb(57, 12, 161)">07</p>
+        <p style = "color:rgb(153, 79, 160)">08</p>
+        <p style = "color:rgb(231, 157, 20)">09</p>
+        <p style = "color:rgb(39, 163, 101)">10</p>
+        <hr style="border:1px light gray">
+    </div>
+
+
+    <!-- Prints your name in a Tahoma font. -->
+    <p style="font-family:Tahoma,sans-serif">Sriram</p>
+    <p>Sriram</p>
+    <hr style="border:1px light gray">
+
+ <!-- Print a paragraph with 4 - 5 sentences. Each sentence should be a different font. -->
+    <div>
+        <p style ="text-align:justify;">
+            <span style= "color:rgb(24, 166, 223);font-size:25px; font-family: 'Parisienne', cursive;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias adipisci quos sequi molestias velit. Minima nihil quo quibusdam tempora,</span>
+            <span style="color:rgb(0, 140, 255); font-family: 'Rampart One', cursive;">  recusandae  eaque suscipit qui! Laboriosam beatae, suscipit magnam iste unde, eveniet enim placeat, quo rem facilis expedita earum quae. Quos alias </span>
+            <span style= "color:cornflowerblue;font-family: 'Press Start 2P', cursive;"> adipisci, molestias sequi ut, veniam sint porro, nostrum accusantium error  </span> 
+            <span style= "color:coral;font-family: 'Permanent Marker', cursive;">rerum beatae explicabo architecto aliquid dolorum asperiores. Sequi, debitis placeat necessitatibus, dolores voluptatibus dolorum </span>
+        </p>
+        <hr style="border:1px light gray">
+    </div>
+
+ <!-- Print a paragraph that is a description of a book, include the title of the book as
+    well as its author. Names and titles should be underlined, adjectives should be
+    italicized and bolded -->
+    <div>
+        <p>
+            <p>
+                <h3><u>The Title</u></h3>
+                <b>Author :</b><span style="text-decoration: underline;">Ramsri</span>
+                <div style ="font-style:italic; font-weight: bold;">Adjectives :<small> Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, saepe!</small></div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolor, veritatis ducimus dicta provident quis quo. Pariatur, reprehenderit itaque earum nulla assumenda quisquam voluptatum consequuntur laboriosam incidunt. Optio, at porro?
+            </p>
+        </p>
+        <hr style="border:1px light gray">
+    </div>   
+    
+    <!-- Print your name to the screen with every letter being a different heading size. -->
+    <div>
+        <h1>S</h1>
+        <h2>R</h2>
+        <h3>I</h3>
+        <h4>R</h4>
+        <h5>A</h5>
+        <h6>M</h6>
+        <hr style="border:1px light gray">
+    </div>
+
+    <!-- Print the squares of the numbers 1 - 20. Each number should be on a separate
+    line, next to it the number 2 superscripted, an equal sign and the result.
+    (Example: 10 2 = 100) -->
+    <div id ="square">
+        <script>
+            var square = document.querySelector("#square");
+            var result ="";
+            for(var i =1; i<=20; i++){
+                square.innerHTML+=[i] + "<sup>2</sup> = " +[i]*[i] + "</br>";
+            }
+        </script>
+        <hr style="border:1px light gray">
+    </div>
+
+    <!-- UnAlphabetized list & Alphabetized list subscript number -->
+    <div>
+        <div>
+            <h1>UnAlphabetized list</h1>
+            bcde<sub>02</sub></br>
+            ijkl<sub>09</sub></br>
+            hijk<sub>08</sub></br>
+            cdef<sub>03</sub></br>
+            ghij<sub>06</sub></br>
+            defg<sub>04</sub></br>
+            jklm<sub>02</sub></br>
+            abcd<sub>01</sub></br>
+            efgh<sub>05</sub></br>
+        </div>
+
+        <div>
+            <h1>Alphabetized list</h1>
+            abcd</br>
+            bcde</br>
+            cdef</br>
+            defg</br>
+            efgh</br>
+            fghi</br>
+            ghij</br>
+            hijk</br>
+            ijkl</br>
+            jklm</br>
+        </div>
+        <hr style="border:1px light gray">
+    </div>
+
+    <!-- Print two paragraphs that are both indented using the &nbsp; -->
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, animi.</p>
+        <p><span style = "background-color: red;">&thinsp;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptates?</p>
+        <p><span style = "background-color: red;">&nbsp;</span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, nesciunt.</p>
+        <p><span style = "background-color: red;">&ensp;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, cum?</p>
+        <p><span style = "background-color: red;">&emsp;</span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, nesciunt.</p>
+        <hr style="border:1px light gray">      
+    </div>
+
+    <!-- ordered & unordered list -->
+    <div>
+        <!-- Ordered list with ul -->
+        <ol style = "list-style-type: upper-alpha">
+            <li>Ol list one</li>
+
+            <ul style = "list-style-type: lower-roman">
+                <li>Ol list two</li>
+                <li>Ol List three</li>
+            </ul>
+
+            <li>Ol List four</li>
+        </ol>
+
+        <!-- unordered list with ol-->
+        <ul style = "list-style-type: circle">
+            <li>Ul List one</li>
+
+            <ol style = "list-style-type: lower-alpha">
+                <li>Ul List two</li>
+                <li>Ul List three</li>
+            </ol>
+
+            <li>Ul List four</li>
+        </ul>
+        <hr style="border:1px light gray">
+    </div>
+
+     <!-- Prints an h1 level heading followed by a horizontal line whose width is 100%.
+        Below the horizontal line print a paragraph relating to the text in the heading. -->
+    <div>
+        <p>
+            <h1>Heading</h1>
+        </p>
+        <hr style="border:1px solid gray">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptatibus, vel necessitatibus quisquam, earum, aliquid quidem architecto quia dolores pariatur facilis sed eaque rem tempora dolorem dolore libero labore iusto beatae deserunt similique? Quos, laudantium officiis quo in nulla omnis, repudiandae illum obcaecati aspernatur unde cupiditate ipsa. Quibusdam, a iure! ipsum dolor sit amet consectetur adipisicing elit. Quasi, quia! ipsum dolor, sit amet consectetur adipisicing elit. Et architecto ab illo dolores sapiente aut pariatur neque aliquam quidem eveniet!</p>
+        <hr style="border:1px light gray">
+    </div>
+
+    <!-- preformatted text & blackquote, Quote -->
+    <div>
+        <pre>
+            *****************
+            *               *
+            *               *
+            *               *
+            *               *
+            *****************
+        </pre>
+        <!-- long quotes -->
+
+        <blockquote cite="#">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptas fuga recusandae non commodi, assumenda ex alias aliquid harum veniam perspiciatis nam quam esse fugit beatae soluta laborum obcaecati minima. Incidunt, voluptas nemo voluptate eum ab minus neque natus esse quas non eos tenetur tempore iste quibusdam maiores velit sit!
+        </blockquote>
+        <!-- short quotes-->
+        <q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, iusto!</q>
+        <hr style="border:1px light gray">
+    </div>
+
+    <!-- Print some deleted and inserted text of your choosing.  -->
+    <div>
+        I am <del> a roboot </del><ins> not a roboot </ins><br/>
+        The time is <span style = "text-decoration: line-through;"> not 8.30AM </span> <span style="text-decoration:underline;"> 8.30PM </span>  
+        <hr style ="border:1px light gray">
+    </div>
+
+    <!-- Definition List -->
+    <div>
+        <dl>
+            <dt>HTML</dt>
+            <dd>Hyper Text Markup Language</dd>
+            <dt>CSS</dt>
+            <dd>Cascading Style Sheet</dd>
+            <dt>JS</dt>
+            <dd>JavaScript</dd>
+        </dl>
+        <hr style ="border:1px light gray">
+    </div>
+
+    <!-- address tag -->
+    <div>
+        <address>
+            SMI pvt ltd,<br/>
+            No. 1/469-1, 3rd Street,<br/>
+            Poriyalar Nagar,<br/>
+            Tirumalpuram Post,<br/>
+            Thiruppalai,Madurai - 625014<br/>
+            Tamil Nadu, India.<br/>
+        </address>
+
+        <address style = "text-align:center" >
+            SRIRAM A,<br/>
+            No. 79/6, Meenakshi Garden Street,<br/>
+            Mamsapuram post<br/>
+            Srivilliputhur, Virudhunagar - 626110<br/>
+            Tamil Nadu, India.<br/>
+        </address>
+        <hr style="border:1px light gray">
+    </div>
+
+    <!-- Abbrevation & acronym -->
+    <div style= "line-height: 30px;">
+        <!--Abbrevation-->
+        <div>
+            <abbr title = "message">msg</abbr><br/>
+            <abbr title = "call">cl</abbr><br/>
+            <abbr title = "clock">clk</abbr><br/>
+            <abbr title = "phone">ph</abbr>
+        </div>
+        
+        <!--Acronym-->
+        <div>
+            <!-- this tag not supported in HTML5 -->
+            <acronym title="Hyper Text Markup Language">HTML</acronym><br/>
+            <acronym title="Cascading Style Sheet">CSS</acronym><br/>
+            <acronym title="JavaScript">JS</acronym><br/>
+        </div>
+        <hr style="border:1px light gray">
+    </div>
+
+    <!-- anchor tag -->
+    <div  style= "line-height: 30px">
+        <a href = "https://www.google.com"  target ="_blank" class ="a">Hii, I am Google</a><br/>
+        <a href = "https://www.yahoo.com"  target ="_self" class ="a">Hii, I am Yahoo</a><br/>
+        <hr style="border:1px light gray">
+    </div>
+
+    <!-- link top and bottom -->
+    <div>
+        <a href ="#go_top" class ="a">go top</a> 
+        <a  name="go_bottom"></a>  
+        <hr style="border:1px light gray">
+    </div>
+
+<!-- images -->
+    <div>
+        <div>
+            <a href = "https://images.news18.com/ibnlive/uploads/2021/09/sports-41-16317067143x2.png" target= "_blank">
+                <img src = "https://images.news18.com/ibnlive/uploads/2021/09/sports-41-16317067143x2.png" alt="volleyball1" title="volleyball1" width="250px" height="250px" style= "border:2px solid gray;border-radius: 30px;">
+            </a>
+        </div>
+
+        <div>
+            <a href = "https://cdn.britannica.com/08/190908-131-A6B6D47D/Volleyball-match.jpg" target= "_blank">
+                <img src = "https://cdn.britannica.com/08/190908-131-A6B6D47D/Volleyball-match.jpg" alt="volleyball2" title="volleyball2" width="250px" height="250px" style= "border:2px solid gray;border-radius: 30px;margin-left: 40%;">
+            </a>
+        </div>
+
+        <div>            
+            <a href = "https://global-uploads.webflow.com/5b44edefca321a1e2d0c2aa6/5fbc13d5c5de9e8cc0b589c8_Dimensions-Sports-Volleyball-Icon.svg" target= "_blank">
+                <img src = "https://global-uploads.webflow.com/5b44edefca321a1e2d0c2aa6/5fbc13d5c5de9e8cc0b589c8_Dimensions-Sports-Volleyball-Icon.svg" alt="volleyball3" title="volleyball3" width="250px" height="250px" style= "border:2px solid gray;border-radius: 30px;margin-left:80%">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

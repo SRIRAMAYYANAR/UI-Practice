@@ -1,0 +1,30 @@
+<section class="py-5" *ngIf="pro!=''">
+    <div class="container px-4 px-lg-5">
+        <div class="row justify-content-center">
+            <div class="col mb-5">
+              <div class="card h-100">
+                <mat-grid-list cols="2" rowHeight="3:1" >
+                    <h1 class="p-4 text-center" style="font-family: 'Times New Roman', Times, serif;" style="background-color:rgba(210,210,210,0.5)">{{pro.pcategory}} {{pro.pname}}</h1>
+                    <mat-grid-tile [rowspan]="3" style="background-color:skyblue"><img class="card-img-top" src="{{pro.pimg}}" alt="..." height="100%"/></mat-grid-tile>
+                    <mat-grid-tile style="background-color:skyblue">
+                        <div style="margin-left:10%;" id="features">
+                            <h3>Product Features : </h3>
+                            <div>{{pro.pfeatures}}</div>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile style="background-color:skyblue;" class="justify-content-center">Product Price : {{pro.price}}</mat-grid-tile>
+                    <mat-grid-tile style="background-color:skyblue" class="justify-content-center">
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <button class="btn btn-outline-dark mt-auto btn-primary text-white ps-4 pe-4">Buy Now <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                                <button class="btn btn-outline-dark mt-auto btn-secondary text-white ms-3" (click)="cart(pro.pid)">Add to Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="text-center"></div>
+                        </div>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>

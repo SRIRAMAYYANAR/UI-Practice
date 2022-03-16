@@ -1,0 +1,325 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" >
+    
+    <!-- Access Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Bungee+Shade&display=swap" rel="stylesheet"> 
+
+    <!-- Google icons -->
+    <script src="https://use.fontawesome.com/dc0e34c78e.js"></script>
+
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body onload = dis()>
+  <!-- form -->
+    <div class="container" >
+      <div class="row" id ="row1">
+        <div class="col-12 text-center">
+          <h2 id="topic">REGISTRATION FORM</h2>
+        </div>
+        <form id="form1">
+          <fieldset id="form">
+
+            <div class="row">
+
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3">
+                <label for="First Name"> First Name<span>*</span>  :</label>
+                <input type="text" class="form-control" id="1name" name="name" placeholder="First name" required>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6  mt-3">
+                <label for="Last Name"> Last Name<span>*</span>  :</label>
+                <input type="text" class="form-control" id="2name" name="name" placeholder="Last name" required>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3">
+                <label for="Gender" class="mt-3"> Gender  :</label></br>
+                <input type= "radio" name="Gender" id="male" value="male" class="ml-5"> 
+                <label for="Male">Male</label>&emsp;     
+                <input type= "radio" name="Gender" id="Female" value="Female"> 
+                <label for="FeMale">Female</label><p>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3" >
+                <label for="DOB" class="mt-3">DOB  :</label></br>
+                <input id="myDate" class="form-control" name="Date-of-Birth" placeholder= "dd/mm/yyyy"> 
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3" >
+                <label for="email" class="mt-3">Email  :</label></br>
+                  <input type="email" id ="myEmail"  class="form-control" name="Email" placeholder="abcd@gmail.com" pattern = "[a-z0-9]+@gmail.com">
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3" >
+                <label for="Mobile No" class="mt-3">Mobile No  :</label></br>
+                  <input type="tel" class="form-control" name="Mobile" id="ph_No" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+              </div>
+
+
+              <div id="button">
+                <input class="btn btn-primary btn-lg mt-5" type="submit" value="Submit" id = "sub" onclick="require()">
+                <input class="btn btn-secondary btn-lg mt-5 ml-4" type="reset" value=" Reset " id ="re" onclick="require1()">
+              </div>
+
+            </div>
+          </fieldset>
+          </form>
+        </div>
+    </div>
+
+ <!-- form action -->
+<script>
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+        if (mm<10){
+          mm = '0'+mm;
+        }
+        var date = yyyy+'-'+mm+'-'+dd;
+      
+//  submit function 
+        function require(){
+
+          var empty1 = document.getElementById("1name").value;
+          var empty2 = document.getElementById("2name").value;
+
+          var email = document.querySelector("#myEmail");
+          var patternEmail = email.getAttribute("pattern");
+          var emailValue = email.value;
+          var emailTest = new RegExp(patternEmail);
+
+          var mobileNo = document.getElementById("ph_No");
+          var val =mobileNo.getAttribute("pattern");
+          var mobileNoValue = mobileNo.value;
+          var val1 = new RegExp(val);
+         
+          var form = document.getElementById("form");
+          var p = document.createElement("p");
+          var btn = document.createElement("button");
+          
+          if(empty1=="" || empty2==""){
+          
+          form.disabled=true;
+          p.id="alt";
+          p.innerHTML ="<h4> please fillout the Required fields</h4>";
+
+          btn.id ="bt";
+          btn.type = "button";
+          btn.setAttribute("style","color:black; padding:5px 30px; margin-top:20px");
+          btn.innerHTML ="OK";
+
+
+          btn.onclick = function(){ 
+          p.style.display ="none";
+          form.disabled=false;
+
+          if(empty1==""){
+            document.getElementById("1name").focus();
+            return false;  
+          }
+          if(empty2==""){
+            document.getElementById("2name").focus();
+            return false;
+          }
+        }
+          p.append(btn);
+          document.body.append(p);  
+      }
+      else if((email.value !== "" && emailTest.test(emailValue) == false) || (mobileNo.value !== "" && val1.test(mobileNoValue) == false)){
+      console.log(emailTest.test(emailValue));
+        if(emailTest.test(emailValue) == false){
+              document.getElementById("myEmail").focus();
+        }
+        if(val1.test(mobileNoValue) == false){
+          document.getElementById("ph_No").focus();
+        }
+
+      }
+      
+      else{
+            
+        form.disabled=true;
+        p.id ="alt";
+        p.innerHTML =" <h2>WELL DONE!</h2>\n You're Regitered Successfully<br>";
+
+        btn.type = "button";
+        btn.setAttribute("style","color:black; padding:5px 30px; margin-top:20px");
+        btn.innerHTML ="OK";
+
+
+        btn.onclick = function(){ 
+          p.style.display ="none";
+          form.disabled=false;
+          document.getElementById("form1").submit();
+        }
+        p.append(btn);
+        document.body.append(p);
+      }
+    }
+  // reset function
+      function require1(){
+        var formId = document.getElementById("form");
+          
+          var para = document.createElement("p");
+
+          formId.disabled=true;
+          para.id ="alt";
+          para.innerHTML =" <h4>ARE YOU SURE!</h4>\n <h2>RESET</h2>";
+
+          var btnOk = document.createElement("button");
+          btnOk.type = "button";
+          btnOk.setAttribute("style","color:white; background-color:blue; padding:5px 30px; margin-top:20px");
+          btnOk.innerHTML ="OK";
+
+          var btnCencel = document.createElement("button");
+          btnCencel.type = "button";
+          btnCencel.setAttribute("style","color:black; margin-left:10px; background-color:white; padding:5px 20px; margin-top:20px");
+          btnCencel.innerHTML ="Cencel";
+
+          btnOk.onclick = function(){ 
+            para.style.display ="none";
+            formId.disabled=false;
+            document.getElementById("form1").reset();
+          }
+          btnCencel.onclick = function(){ 
+            para.style.display ="none";
+            formId.disabled=false;
+            return document.getElementById("form1");
+          }
+          para.append(btnOk, btnCencel);
+          document.body.append(para);
+      }
+
+           
+  
+</script>
+
+<!-- calender textContent -->
+<div id = "calender">
+<table>
+  <tr>
+      <th colspan="7" class = "heading">
+          <span  id = "month"></span >
+          <span id = "camma"></span>
+          <span id="year" ></span>
+          <span id= "down">
+              <select id = "sel">
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                  <option value="2013">2013</option>
+                  <option value="2012">2012</option>
+                  <option value="2011">2011</option>
+                  <option value="2010">2010</option>
+                  <option value="2009">2009</option>
+                  <option value="2008">2008</option>
+                  <option value="2007">2007</option>
+                  <option value="2006">2006</option>
+                  <option value="2005">2005</option>
+                  <option value="2004">2004</option>
+                  <option value="2003">2003</option>
+                  <option value="2002">2002</option>
+                  <option value="2001">2001</option>
+                  <option value="2000">2000</option>
+              </select>
+              <span id ="icon">
+                  <i class="fa fa-caret-down" aria-hidden="true" id="fullYear"></i>
+              </span>
+              </span>
+          <span id ="select"></span>
+          <span class = "text-right">
+              <button class="fa fa-arrow-left" aria-hidden="true" id = "left-arrow"></button> 
+              <button class="fa fa-arrow-right" aria-hidden="true" id = "right-arrow" ></button>
+          </span>
+      </th>
+  </tr>  
+  <tr>
+      <td id = "one" class ="num" value ="1">1</td>
+      <td id = "two" class ="num" value ="2">2</td>
+      <td id = "three" class ="num"  value ="3">3</td>
+      <td id = "four" class ="num"  value ="4">4</td>
+      <td id = "five" class ="num"  value ="5">5</td>
+      <td id = "six" class ="num"  value ="6">6</td>
+      <td id = "seven" class ="num"  value ="7">7</td>
+  </tr>
+  <tr>
+      <td id = "eight" class ="num"  value ="8">8</td>
+      <td id = "nine" class ="num"  value ="9">9</td>
+      <td id = "one-zero" class ="num"  value ="10">10</td>
+      <td id = "one-one" class ="num"  value ="11">11</td>
+      <td id = "one-two" class ="num"  value ="12">12</td>
+      <td id = "one-three" class ="num"  value ="13">13</td>
+      <td id = "one-four" class ="num"  value ="14">14</td>
+  </tr>
+  <tr>
+      <td id = "one-five" class ="num"  value ="15">15</td>
+      <td id = "one-six" class ="num"  value ="16">16</td>
+      <td id = "one-seven" class ="num"  value ="17">17</td>
+      <td id = "one-eight" class ="num"  value ="18">18</td>
+      <td id = "one-nine" class ="num"  value ="19">19</td>
+      <td id = "two-zero" class ="num"  value ="20">20</td>
+      <td id = "two-one" class ="num"  value ="21">21</td>
+  </tr>
+  <tr>
+      <td id = "two-two" class ="num" value ="22">22</td>
+      <td id = "two-three" class ="num" value ="23">23</td>
+      <td id = "two-four" class ="num" value ="24">24</td>
+      <td id = "two-five" class ="num" value ="25">25</td>
+      <td id = "two-six" class ="num" value ="26">26</td>
+      <td id = "two-seven" class ="num" value ="27">27</td>
+      <td id = "two-eight" class ="num" value ="28">28</td>
+  </tr>
+  <tr>
+      <td id = "two-nine" class ="num" value ="29">29</td>
+      <td id = "three-zero" class ="num" value ="30">30</td>
+      <td id = "three-one" class ="num" value ="31">31</td>
+      <td id ="ok" colspan ="4"><input type = "button" id = "bt" value = "OK" style = "background-color: rgb(101, 101, 218); color:white; margin-top:10px;padding:5px 20px; "></td>
+  </tr>
+</table>
+</div>
+
+<!-- External js -->
+<script src = "form.js"></script> <!-- calender activity -->  
+
+    <!-- bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+
+
+<!-- Reduce the submit button size
+DOB - should not allow to click the future date/month/year
+Inside colour might be changed
+Remove the number from the pop-up
+Change backround img -->
+
+<!-- 1. Reduce the other text box also
+2.  Pop up 
+      a. Remove the number
+1. Reduce the other text box also
+2.  Pop up 
+      a. Remove the number
+	  b. Ok and cancel button should be in center
+	  c. Increase the font size
+3. DOB - remove the background colour -->
+

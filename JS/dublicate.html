@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="click" onclick ="findDupValues()">  
+    <div id ="duplicate"></div>
+    
+    <script>
+        function findDupValues(){
+            var arr =[1,2,3,4,5,1,2,3,4];
+            for(let i=0;i<arr.length;i++){
+            for(let j=i+1;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+            document.getElementById("duplicate").innerHTML += arr[i]+"<br/>";
+                }
+            }
+            }
+        }  
+    </script>
+     
+   
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        #div1{
+            transform: rotateZ(180deg);
+            position: absolute;
+            display:flex;
+            justify-content: end;
+            align-items: end;
+            flex-direction: column;
+            border-radius:50%;
+        }
+        #div2{
+            
+            animation:div 1s linear infinite;
+        }
+        @keyframes div{
+            0%{
+                transform: rotateZ(360deg) translate(-300px,700px);
+            }
+             /* 50%{
+                animation-play-state: paused;
+            } 
+            100%{
+                animation-play-state: running;
+                transform: rotateZ(360deg) translate(-200px,700px);
+            }  */
+        }
+    </style> -->
+</head>
+<body>
+    <div style="width:500px;height:500px;background-color:red;" id = "div1">       
+        <div style = "width:100px;height:100px;background-color:yellow;border-radius: 50%;">hii</div>
+        <div style = "width:100px;height:100px;background-color:green;border-radius: 50%;">hello</div>
+        <div style = "width:100px;height:100px;background-color:blue;border-radius: 50%;" id="div2">h r u</div>
+    </div>
+    <script>
+        var div = document.getElementById("div1");
+        var child = div.children;
+        console.log(child);
+        
+          document.querySelector("body").onload = function(){
+            child[0].style.transform = "translateX(400px)";
+            child[1].style.transform = "translateX(400px)";
+            child[2].style.transform = "translateX(400px)";
+          }
+        
+       
+        
+   </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<div>
+    <h3 style="position: absolute;left:45%;font-weight:bold;font-size:20px">remove Product</h3>
+    <button id="mybtn" mat-button mat-dialog-close><mat-icon>close</mat-icon></button> 
+    <mat-dialog-content class="mat-typography" class="mt-3">
+
+        <form (ngSubmit)="removePro()" #delete="ngForm">
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Product Id</mat-label>
+                <input matInput type="text" id="pid" name="pid" [(ngModel)]="pro.pid">
+            </mat-form-field>
+            <input type="button" class="form-control bg-primary text-white" (click) = "searchPro()" value="delete" style="float: left">
+            <div *ngIf="prd!=''">
+                <table  style="width:100%;margin-top:20px">
+                    <tr>
+                        <th style="width:20%;">Id</th>
+                        <td>{{prd.pid}}</td>
+                    </tr>
+                    <tr>
+                        <th>Name</th>
+                        <td>{{prd.pname}}</td>
+                    </tr>
+                    <tr>
+                        <th>category</th>
+                        <td>{{prd.pcategory}}</td>
+                    </tr>
+                    <tr>
+                        <th>price</th>
+                        <td>{{prd.price}}</td>
+                    </tr>
+                    <tr>
+                        <th>Features</th>
+                        <td>{{prd.pfeatures}}</td>
+                    </tr>
+                
+                </table>
+                <table style="margin-top:20px">
+                    <tr style="padding-top:20px">
+                        <th style="text-align:center;font-size:20px">Are you sure? You want to delete?</th>
+                        <td><input type="submit" class="form-control bg-primary text-white" value="yes" style="float: left"></td>
+                        <td><input type="button" class="form-control bg-primary text-white" value="no" style="float: left" (click)="cancel()"></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </mat-dialog-content>
+</div>
+<h3 style="text-align: center;font-size:20px;" class="font-italic mt-3">{{res}}</h3>

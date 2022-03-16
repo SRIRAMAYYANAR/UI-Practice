@@ -1,0 +1,65 @@
+	/* h3{
+        font-size:25px;
+        color:hsl(39, 72%, 62%);
+        font-family: monospace;
+        font-weight: bold;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-thickness: 5px;
+        text-decoration-color:rgb(238, 130, 157);
+        text-align:center;
+    }
+    #myForm{
+	    background-color: rgba(210, 210, 210, 0.5);
+	    padding:20px 30px;
+	    border-radius:10px;
+        width:100%;
+         transform:translate(30em, 10em);
+		}
+	.btn1{
+		margin : 0 0 0 30%;
+		background-color:hsl(39, 72%, 62%);
+		padding:12px 20px;
+		font-size:15px;
+		font-style : italic;
+		font-weight:bold;
+		border-radius:10px;
+	}
+	input{
+	    margin-bottom: 15px;
+	    border:none;
+	    outline:none;
+	    background: none;
+	    font-size: 17px;
+	    padding: 10px;
+	    border-bottom:2px solid green;
+	}
+	input[type="text"]:focus{
+		border-bottom:2px solid rgb(238, 130, 157);
+	}
+    #logIn-content{
+        padding:0 50px;
+    }
+	#mybtn{
+		position: relative;
+		left: 88%;
+		top: 0%;
+	}
+   */
+   .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+mat-form-field{
+    width:100%;
+}
+#login{
+   padding:0 10%;
+}
+#mybtn{
+    position: relative;
+    left: 88%;
+    top: 0%;
+}
+#iconul li{
+	display: inline
+}

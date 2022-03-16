@@ -1,0 +1,28 @@
+<h3 style="position: absolute;left:45%;font-weight:bold;font-size:25px">LogIn</h3>
+<button id="mybtn" mat-button mat-dialog-close><mat-icon>close</mat-icon></button> 
+<mat-dialog-content class="mat-typography" class="mt-3">   
+    <div id="login">
+        <form #myForm="ngForm" (ngSubmit)="login()" autocomplate="off">
+            <mat-form-field appearance="fill" class="name"> 
+                <mat-label>User Name</mat-label>
+                <input matInput name="username" type="text"[(ngModel)]="reg.fname" required>
+            </mat-form-field>
+            <!-- <mat-form-field appearance="fill" class="name"> 
+                <mat-label>Password</mat-label>
+                <input matInput name="password" [(ngModel)]="reg.pwd">
+            </mat-form-field> -->
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" name="pwd" [(ngModel)]="reg.pwd" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <div style= "text-align:center;">
+                <input type ="submit"  class="btn btn-primary" id="reg-sub" value = "SUBMIT"/>
+                <div style= "margin-top:10px">(or)</div>
+            <button mat-button (click)="registerBuyer()" class="btn btn-secondary  mt-3 border border-3 rounded-pill">Create Your shopping Account</button>
+            </div>
+        </form>
+    </div>
+</mat-dialog-content>

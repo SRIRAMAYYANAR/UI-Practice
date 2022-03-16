@@ -1,0 +1,13 @@
+.example-form-field {
+    width: 100%;
+}
+
+mat-label{
+    font-size:15px;
+}
+
+#mybtn{
+    position: relative;
+    left: 88%;
+    top: 0%;
+}

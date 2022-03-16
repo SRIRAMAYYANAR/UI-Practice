@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tutorial</title>
+    <style>
+        /* Navigation Styles */
+        #page-Nav{
+            background-color:rgb(226, 226, 226);
+            padding:8px 0;
+        }
+        #page-Nav ul li{
+            list-style-type:none;
+            display:inline; 
+            padding:25px 4%;
+            border-right:2px solid rgb(168, 167, 167);
+        }
+        #page-Nav a{
+            text-decoration:none;
+            color:black;
+        }
+        #page-Nav li:hover{
+            background-color: #ccc;
+        }
+        .fixed-media{
+            border:2px solid black;
+            position: fixed;
+            right:0;
+            top:50%;
+        }
+        .fixed-media div{
+            width:50px;
+            height:50px;
+            border-bottom: 2px solid black;
+            text-align: center;
+        }
+        .fixed-media a{
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* Side heading styles */
+        .sub-heading{
+            width:18.2%;
+            height: 550px;
+            text-align: center;
+            font-size: 18px;
+            border-right: 2px solid gray;
+            overflow-y: scroll;
+            float: left;
+        }
+        .sub-heading td{
+            border-bottom: 2px solid rgb(168,167,167);
+            padding:5px 0; 
+            text-decoration: none;
+        }
+        .sub-heading td a{
+            text-decoration: none;
+            color:black;
+        }
+        .sub-heading td:hover{
+            background-color:gray;
+        }
+
+
+        /* content Styles */
+        .sub-content{
+            float: left;
+            width:80%;
+        }
+        .sub-content > div{
+            display:none;
+        }
+        .sub-content > div:target{
+            display:block;
+        }
+        #language >div{
+            display:none;
+        } 
+        #language div:target{
+            display:block;
+        }
+      
+    </style>
+</head>
+<body>
+    <div id = "page-Nav">
+        <ul style = "padding-left: 0;">
+            <li style ="padding:25px 7%;"><a href = "#">Tutorials</a></li>
+            <li><a href = "#php-page">PHP</a></li>
+            <li><a href = "#">Python</a></li>
+            <li><a href = "#">C#</a></li>
+            <li><a href = "#">CSS</a></li>
+            <li ><a href = "#html-page">HTML</a></li>
+            <li><a href = "#">SQL</a></li>
+            <li style ="padding:25px 7%;border-right:0"></li>
+        </ul>
+    </div>
+
+    <div class = "fixed-media">
+        <div class ="social-media" style = "background-color: blueviolet;"><a href = "#">F</a></div>
+        <div class ="social-media"  style = "background-color: skyblue;"><a href = "#">T</a></div>
+        <div class ="social-media"  style = "background-color:red;"><a href = "#">P</a></div>
+        <div class ="social-media"  style = "background-color: blue;"><a href = "#">in</a></div>
+    </div>
+
+    <div id = "language">
+        <div id = "html-page">
+            <div class = "sub-heading">
+                <table width = "100%">
+                    <tr><td><a href = "#home">HTML Home</a></td></tr>
+                    <tr><td><a href = "#intro">HTML Introduction</a></td></tr>
+                    <tr><td><a href = "#editors">HTML Editors</td></tr>
+                    <tr><td><a href = "#basics">HTML basics</td></tr>
+                    <tr><td><a href = "#elements">HTML Elements</td></tr>
+                    <tr><td><a href = "#attributes">HTML Attributes</td></tr>
+                    <tr><td><a href = "#heading">HTML Heading</td></tr>
+                    <tr><td><a href = "#paragraphs">HTML Paragraphs</td></tr>
+                    <tr><td><a href = "#styles">HTML Styles</td></tr>
+                    <tr><td><a href = "#formatting">HTML Formatting</td></tr>
+                    <tr><td><a href = "#quotations">HTML Quotations</td></tr>
+                    <tr><td><a href = "#comments">HTML Comments</td></tr>
+                    <tr><td><a href = "#colors">HTML Colors</td></tr>
+                    <tr><td><a href = "#css">HTML CSS</td></tr>
+                    <tr><td><a href = "#links">HTML Links</td></tr>
+                    <tr><td><a href = "#images">HTML Images</td></tr>
+                    <tr><td><a href = "#favicon">HTML Favicon</td></tr>
+                    <tr><td><a href = "#tables">HTML Tables</td></tr>
+                    <tr><td><a href = "#lists">HTML Lists</td></tr>
+                </table>
+            </div>
+
+            <div class = "sub-content" style = "display: block;">
+                <div id = "home" >
+                    <h1>This is <i>Home</i> content </h1>
+                    <div>sriram ajhgyddufuui</div>
+                </div>
+                <div id = "intro"><h1>This is <i>Intro</i> content </h1></div>
+                <div id = "editors"><h1>This is <i>Editors</i> content </h1></div>
+                <div id = "basics"><h1>This is <i>Basics</i> content </h1></div>
+                <div id = "elements"><h1>This is <i>Elements</i> content </h1></div>
+                <div id = "attributes"><h1>This is <i>Attributes</i> content </h1></div>
+                <div id = "heading"><h1>This is <i>Heading</i> content </h1></div>
+                <div id = "paragraphs"><h1>This is <i>Paragraphs</i> content </h1></div>
+                <div id = "styles"><h1>This is <i>Styles</i> content </h1></div>
+                <div id = "formatting"><h1>This is <i>Formatting</i> content </h1></div>
+                <div id = "quotations"><h1>This is <i>Quotations</i> content </h1></div>
+                <div id = "comments"><h1>This is <i>comments</i> content </h1></div>
+                <div id = "colors"><h1>This is <i>colors</i> content </h1></div>
+                <div id = "css"><h1>This is <i>CSS</i> content </h1></div>
+                <div id = "links"><h1>This is <i>links</i> content </h1></div>
+                <div id = "images"><h1>This is <i>Images</i> content </h1></div>
+                <div id = "favicon"><h1>This is <i>Favicon</i> content </h1></div>
+                <div id = "tables"><h1>This is <i>Tables</i> content </h1></div>
+                <div id = "lists"><h1>This is <i>Lists</i> content </h1></div>
+            </div>
+        </div>
+
+        <div id = "php-page">
+            <div class = "sub-heading">
+                <table width = "100%">
+                    <tr><td><a href = "#home">PHP Home</a></td></tr>
+                    <tr><td><a href = "#intro">HTML Introduction</a></td></tr>
+                    <tr><td><a href = "#editors">HTML Editors</td></tr>
+                    <tr><td><a href = "#basics">HTML basics</td></tr>
+                    <tr><td><a href = "#elements">HTML Elements</td></tr>
+                    <tr><td><a href = "#attributes">HTML Attributes</td></tr>
+                    <tr><td><a href = "#heading">HTML Heading</td></tr>
+                    <tr><td><a href = "#paragraphs">HTML Paragraphs</td></tr>
+                    <tr><td><a href = "#styles">HTML Styles</td></tr>
+                    <tr><td><a href = "#formatting">HTML Formatting</td></tr>
+                    <tr><td><a href = "#quotations">HTML Quotations</td></tr>
+                    <tr><td><a href = "#comments">HTML Comments</td></tr>
+                    <tr><td><a href = "#colors">HTML Colors</td></tr>
+                    <tr><td><a href = "#css">HTML CSS</td></tr>
+                    <tr><td><a href = "#links">HTML Links</td></tr>
+                    <tr><td><a href = "#images">HTML Images</td></tr>
+                    <tr><td><a href = "#favicon">HTML Favicon</td></tr>
+                    <tr><td><a href = "#tables">HTML Tables</td></tr>
+                    <tr><td><a href = "#lists">HTML Lists</td></tr>
+                </table>
+            </div>
+
+            <div class = "sub-content">
+                <div id = "home" >
+                    <h1>This is <i>Home</i> content </h1>
+                    <div>sriram ajhgyddufuui</div>
+                </div>
+                <div id = "intro"><h1>This is <i>Intro</i> content </h1></div>
+                <div id = "editors"><h1>This is <i>Editors</i> content </h1></div>
+                <div id = "basics"><h1>This is <i>Basics</i> content </h1></div>
+                <div id = "elements"><h1>This is <i>Elements</i> content </h1></div>
+                <div id = "attributes"><h1>This is <i>Attributes</i> content </h1></div>
+                <div id = "heading"><h1>This is <i>Heading</i> content </h1></div>
+                <div id = "paragraphs"><h1>This is <i>Paragraphs</i> content </h1></div>
+                <div id = "styles"><h1>This is <i>Styles</i> content </h1></div>
+                <div id = "formatting"><h1>This is <i>Formatting</i> content </h1></div>
+                <div id = "quotations"><h1>This is <i>Quotations</i> content </h1></div>
+                <div id = "comments"><h1>This is <i>comments</i> content </h1></div>
+                <div id = "colors"><h1>This is <i>colors</i> content </h1></div>
+                <div id = "css"><h1>This is <i>CSS</i> content </h1></div>
+                <div id = "links"><h1>This is <i>links</i> content </h1></div>
+                <div id = "images"><h1>This is <i>Images</i> content </h1></div>
+                <div id = "favicon"><h1>This is <i>Favicon</i> content </h1></div>
+                <div id = "tables"><h1>This is <i>Tables</i> content </h1></div>
+                <div id = "lists"><h1>This is <i>Lists</i> content </h1></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

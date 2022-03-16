@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="sri.css">
+    <title>LogIn/Register</title>
+    <style>
+        body{
+            background-image:url('https://www.10wallpaper.com/wallpaper/1366x768/1309/purple_sunset-landscape_HD_Wallpaper_1366x768.jpg');
+        }
+        #user-page{
+            background-color: rgb(235, 230, 224,0.5);
+            position: absolute;
+            transform:translate(35em, 5em);
+            padding:20px 30px;
+        }
+        #logbtn-regbtn{
+            text-align: center;
+        }
+        input{
+            margin-bottom: 15px;
+            border:none;
+            outline:none;
+            background: none;
+            color:white;
+            font-size: 15px;
+            padding: 10px;
+            border-bottom: 1px solid rgb(98, 207, 98);
+        }
+        ul{
+            margin:20px 0px 0 400px;
+        }
+        ul li{
+            list-style-type: none;
+            display: inline;
+            padding:20px 30px;
+            text-align: center;
+            color:white;
+            margin-left:20px;
+        }
+        ul li:hover{
+            background-color:#e4b256;
+            border-radius: 18px;
+            padding:10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1 style ="margin:30px 0 0 30px;color:aliceblue"><a href ="https://upload.wikimedia.org/wikipedia/commons/f/f0/Mops_oct09_cropped2.jpg"><span style ="color:white">TIN-TIN</span></a></h1>
+        <ul>
+            <li>Home</li>
+            <li>About us</li>
+            <li>Services</li>
+            <li>Contact</li>
+            <li onclick ="navlogin()">log in</li>
+        </ul>
+    </nav> 
+    <div id = "user-page">
+        <form>
+        <div id = "logbtn-regbtn">
+            <input type= "submit" id = "login-register" onclick = "login()"    value= "LogIn" style= "border-bottom: none;">
+            <input type="submit"   id ="register-login" onclick = "register()" value ="Register" style= "border-bottom: none;">
+        </div>
+
+        <!-- login page -->
+        <div id ="login-content">
+            <div class ="login-input">
+                <input type="text" class ="inputL" placeholder="User Name" required>
+            </div>
+            <div class ="login-input">
+                <input type="password" class ="inputL" placeholder="Password" required>
+            </div>
+            <div class ="login-input">
+                <input type = "checkbox" class ="inputL" name ="Remander Password" required>
+                <label for="Lpassword">Remander Password</label>
+            </div>
+            <div class ="login-input" style= " text-align:center">
+                <input type= "submit" value= "log in" style= "border-bottom: none;background-color:hsl(39, 72%, 62%);border-radius: 18px;padding:10px 20px;">
+            </div>
+        </div>
+
+
+        <!-- Register page -->
+        <div id ="register-content">
+            <div class ="register-input">
+                <input type="text" class ="inputR" placeholder="First Name" required>
+            </div>
+            <div class ="register-input">
+                <input type="text"  class ="inputR" placeholder="last Name" required>
+            </div>
+            <div class ="register-input">
+                <input type="email"  class ="inputR" placeholder="User Name" required>
+            </div>
+            <div class ="register-input">
+                <input type="password"  class ="inputR" placeholder="Enter password" required>
+            </div>
+            <div class ="register-input">
+                <input type="password"  class ="inputR" placeholder="confirm password" required>
+            </div>
+            <div class ="register-input">
+                <input type="checkbox"   class ="inputR" name="I agree to the terms and condition" required>
+                <label for="Rpassword">I agree to the terms and condition</label>
+            </div>
+            <div class ="register-input" style ="text-align:center">
+                <input type="submit"  value ="Register" style= "border-bottom: none;background-color:#e4b256;border-radius: 18px;padding:10px 20px;"></div>
+        </div>
+    </form>
+    </div>
+
+
+
+    <script>
+        var user_page = document.getElementById("user-page");
+        user_page.hidden = true;
+        function navlogin(){
+            user_page.hidden = false;
+        }
+
+        var login_register = document.getElementById("login-register");
+        var register_login = document.getElementById("register-login");
+        var login_content = document.getElementById("login-content");
+        var register_content = document.getElementById("register-content");
+        register_content.hidden = true;
+        login_register.setAttribute("style","background-color:#e4b256;border-radius: 18px;padding:10px 20px;");
+        function register(){
+            login_content.hidden = true;
+            register_content.hidden = false;
+            register_login.setAttribute("style","background-color:#e4b256;border-radius: 18px;padding:10px 20px;");
+            login_register.removeAttribute("style","background-color:#e4b256;border-radius: 18px;padding:10px 20px;");
+        }
+
+        function login(){
+            login_content.hidden = false;
+            register_content.hidden = true;
+            register_login.removeAttribute("style","background-color:#e4b256;border-radius: 18px;padding:10px 20px;");
+            login_register.setAttribute("style","background-color:#e4b256;border-radius: 18px;padding:10px 20px;");
+        }
+
+    </script>
+</body>
+</html>

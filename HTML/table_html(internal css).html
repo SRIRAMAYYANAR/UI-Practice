@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal CSS table</title>
+    <style>
+        body{
+            color:white;
+            text-align:center;
+            font-family:courier;
+            font-size:10px;
+        }
+        th{
+            color:black !important;
+            padding:10px !important;
+            font-size:15px !important;
+            background-color:#ccc;
+        }
+        td{
+            padding:20px 10px 30px;
+        }
+        .public-swim{
+            background-color: rgb(46, 174, 248);
+        }
+        .lane-swim{
+            background-color: rgb(133, 206, 74);
+        }
+        .pink{
+            background-color: rgb(243, 8, 243);
+        }
+        .education{
+            background-color: rgb(109, 230, 163);
+        }
+        .orange{
+            background-color: rgb(255, 131, 74);
+        }
+        .foot{
+            background-color:rgb(224, 224, 224);
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <table style ="border-spacing:3px 5px;margin-left :70px;">
+        <caption style ="color: rgb(6, 139, 111);font-size:30px;margin:20px 20px 30px 20px">My Assignment </caption>
+        <thead>
+
+            <tr>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td class = "public-swim">Public Swim<br/>6.30Am - 10.00Am</td>
+                <td class = "public-swim">Public Swim<br/>6.30Am - 10.00Am</td>
+                <td class = "public-swim">Public Swim<br/>6.30Am - 10.00Am</td>
+                <td class = "public-swim">Public Swim<br/>6.30Am - 10.00Am</td>
+                <td class = "public-swim">Public Swim<br/>6.30Am - 10.00Am</td>
+                <td class = "lane-swim">Lane Swim<br/>8.00Am - 9.00Am</td>
+                <td class = "lane-swim">Lane Swim<br/>8.00Am - 9.00Am</td>
+            </tr>
+
+            <tr>
+                <td style = "background-color: palevioletred;">Aquacine <br/> 10.30Am - 11.15Pm</td>
+                <td class ="pink">Aqua Jog <br/> 10.30Am - 11.15Am</td>
+                <td class ="education">Education Swiming Lessons <br/>9.00Am - 12.00Pm</td>
+                <td class ="pink">Aquacine <br/> 10.30Am - 11.15Pm</td>
+                <td class ="education">Education Swiming Lessons <br/>9.00Am - 12.00Pm</td>
+                <td class = "orange">Oldham Active Kids Lessons <br/>9.00Am - 1.00Pm</td>
+                <td class = "public-swim">Public Swim<br/>6.30Am - 10.00Am</td>
+            </tr>
+
+            <tr>
+                <td class = "lane-swim">Lane Swim<br/>11.00Am - 1.00Pm</td>
+                <td class ="pink">Aqua Jog <br/> 10.30Am - 11.15Am</td>
+                <td class = "lane-swim">Lane Swim<br/>12.00Am - 1.00Pm</td>
+                <td class = "lane-swim">Lane Swim<br/>12.00Am - 1.00Pm</td>
+                <td class = "lane-swim">Lane Swim<br/>12.00Am - 1.00Pm</td>
+                <td class ="pink">Aqua Jog <br/> 10.30Am - 11.15Am</td>
+                <td class ="pink">Aqua Jog <br/> 10.30Am - 11.15Am</td>
+            </tr>
+
+            <tr>
+                <td class ="education">Education Swiming Lessons <br/>9.00Am - 12.00Pm</td>
+                <td class = "public-swim">Public Swim<br/>6.30Am - 10.00Am</td>
+                <td class = "public-swim">Public Swim<br/>6.30Am - 10.00Am</td>
+                <td class ="education">Education Swiming Lessons <br/>9.00Am - 12.00Pm</td>
+                <td class = "orange">Oldham Active Kids Lessons <br/>9.00Am - 1.00Pm</td>
+                <td class = "public-swim">Public Swim<br/>6.30Am - 10.00Am</td>
+                <td class = "public-swim">Public Swim<br/>6.30Am - 10.00Am</td>
+            </tr>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7" class ="foot">Nice to Meet You</td>
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	input:focus{
+		background-color:red;
+	}
+</style>
+</head>
+<body>
+	<!--<a href = "stdData">click here</a>  -->
+	
+	<form method = "get">
+		<label for = "uName">User Name : </label>
+		<input type = "text" id = "fName" name = "userName">
+		<label for = "pwd">Password : </label>
+		<input type = "text" id = "pwd" name = "password">
+		<input type ="button" value = "submit" onclick = "validation()">
+		<div id = "error"></div>
+        <div id = "test"></div>
+	</form>
+	<script>
+		function validation(){
+			var uName = document.querySelector("#fName");
+			var pwd = document.querySelector("#pwd");
+			var error = document.querySelector("#error");
+			error.innerHtml ="";
+			if(uName == "admin@123") {
+				if(pwd == "smi@123") {
+					error.innerHtml ="";
+				}
+				else {
+					//response.sendRedirect("pwdError.html");
+					//prt.print("your password is Invaild");
+					error.innerHTML = "your password is Invaild";
+				}
+			}
+			else {
+				//prt.print("your userId is Invaild");
+				//response.sendRedirect("userIdError.html");
+				error.innerHTML = "your userId is Invaild";
+			}
+            // var test = document.querySelector("#").value;
+			console.log(typeof(fName.value));
+		}
+		
+	</script>
+</body>
+</html>

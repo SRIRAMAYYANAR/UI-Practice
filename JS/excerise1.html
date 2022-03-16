@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<>>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <label for="sum-Btn">Sum Of Digits of Number  </label>
+            </td>
+            <td>
+                <input type="button" id ="sum-Btn" value="Click">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="arm-Btn">Find Armstrong </label>
+            </td>
+            <td>
+                <input type="button" id ="arm-Btn" value="Click">
+            </td>
+        </tr>
+    </table>
+    <div id="result"></div>
+    <script>
+        
+        var sum_btn = document.getElementById("sum-Btn");
+        var arm_btn = document.getElementById("arm-Btn");
+        sum_btn.onclick = function(){
+            var number =0;
+            var num = prompt("Enter a Number");
+            for(var i = 0; i < num.length; i++){
+                number =parseInt(number)+ parseInt(num[i]);
+            }
+            document.getElementById("result").innerHTML = number;
+        }
+
+        arm_btn.onclick = function(){
+            var num = prompt("Enter a Number");
+            var n=parseInt(num);
+            var sum = 0;
+            while(n>0){
+               var remainder = n%10;
+               sum += remainder*remainder*remainder;
+               n = parseInt(n/10);
+            }
+            if(sum == num){
+                document.getElementById("result").innerHTML = num + " is Armstrong";
+            }
+            else{
+                document.getElementById("result").innerHTML = num + " is not Armstrong";
+            }
+        }
+       
+    </script>
+</body>
+</html>

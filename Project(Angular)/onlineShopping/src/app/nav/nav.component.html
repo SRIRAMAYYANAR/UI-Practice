@@ -1,0 +1,103 @@
+<div id="nav">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid px-4 px-lg-5">
+          <a class="navbar-brand" href="#!">Start Shopping</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                  <li class="nav-item mynav"><a class="nav-link" href="home">Home</a></li>
+                  <li class="nav-item mynav" id ="marchant"><a class="nav-link" href="#">Merchant</a>
+                      <div class="card" id = "merchantApp">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item" mat-button (click)="addPro()">Add Product</li>
+                        <li class="list-group-item" mat-button (click)="updatePro()">Update Product</li>
+                        <li class="list-group-item" mat-button (click)="removePro()">Remove Product</li>
+                      </ul>
+                    </div>
+                </li>
+                  <li class="nav-item mynav" id = "admin"><a class="nav-link" href="#">Admin</a>
+                    <div class="card" id = "adminApp">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"  mat-button (click)="addAuth()">Add Authentication User</li>
+                        <li class="list-group-item" mat-button (click)="updateAuth()">Search and Change User State</li>
+                        <li class="list-group-item" mat-button (click)="removeAuth()">Remove Authentication User</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item mynav"><a class="nav-link" href="#">Buyer</a></li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="allProducts">All Products</a></li>
+                          <li><hr class="dropdown-divider" /></li>
+                          <li><a class="dropdown-item" href="popProducts">Popular Items</a></li>
+                          <li><a class="dropdown-item" href="newArrival">New Arrivals</a></li>
+                      </ul>
+                  </li>
+              </ul>
+          
+              <form class="d-flex" [formGroup]="searchForm" (ngSubmit)="search()">
+                <input class="form-control me-2" name="search" type="search" placeholder="Search" formControlName="search">
+                <a href="search"><input class="btn btn-outline-success" type="submit" value="Search"/></a>
+              </form>
+
+              <form class="d-flex ms-2" (ngSubmit)="viewCartProduct()">
+                  <button class="btn btn-outline-dark" type="submit">
+                      <i class="bi-cart-fill me-1"></i>
+                      Cart
+                      <span class="badge bg-dark text-white ms-1 rounded-pill">{{count()}}</span>
+                  </button>
+              </form>
+              
+              <ul style="list-style-type:none" id ="iconul">
+                <li  *ngIf="hmserv.outFun()==false">
+                  <button class="buttonformenu" mat-button (click)="loginBuyer()" mat-flat-button style="position:relative;top:12px;text-align:center">
+                    <mat-icon  style="font-size:40px;">account_circle</mat-icon> <br/> &nbsp; &nbsp;logIn
+                  </button>
+                </li>
+                <li  *ngIf="hmserv.outFun()==true" >
+                  <button class="buttonformenu"  mat-button  mat-flat-button (click)="removelog()" style="position:relative;top:22px;">
+                    <i class="fa fa-unlock-alt fa-3x" aria-hidden="true"></i> 
+                  </button><br/>
+                  <span style="position:relative;left:60%;top:-12px;color:rgb(121, 55, 117);font-size:17px">welcome <br/>{{getsessname()}}</span>
+                  <span style="position:relative;left:-50%;top:10px">LogOut</span>
+                </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</div> 
+
+<section class="py-5" *ngIf="product!=''">
+  <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <div class="col mb-5" *ngFor="let item of product">
+            <div class="card h-100">
+              <!-- Product image-->
+              <img class="card-img-top" src="{{item.pimg}}" alt="..." height="200px"/>
+              <!-- Product details-->
+              <div class="card-body p-4">
+                  <div class="text-center">
+                      <!-- Product name-->
+                      <h2 class="fw-bolder">{{item.pcategory}} {{item.pname}}</h2>
+                      <!-- Product reviews-->
+                      <div class="d-flex justify-content-center small text-warning mb-2">
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star-o" aria-hidden="true"></i>
+                          <i class="fa fa-star-o" aria-hidden="true"></i>
+                      </div>
+                      <!-- Product price-->
+                      {{item.price}}
+                  </div>
+              </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center"><a class="btn btn-outline-dark mt-auto btn-primary text-white" href="buy">Buy Now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>      
+</section>

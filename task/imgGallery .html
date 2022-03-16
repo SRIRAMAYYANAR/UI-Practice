@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gallery</title>
+    <style>
+         #border-head{
+            border: 8px groove rgb(61, 217, 238); 
+            height: 600px;
+            margin:50px 10%;
+            border-radius:10px;
+            box-shadow: rgb(61, 217, 238,0.5) 10px 10px 10px 10px,rgb(61, 217, 238,0.5) -10px -10px 50px 10px;
+        }
+        .imgDiv{
+            width:22%;
+            height:250px;
+            border:2px solid black;
+            float: left;
+            margin:2% 1%;
+        }
+        .imgDiv img{
+            width:99%;
+            height:200px;
+            border:2px solid black;
+        }
+        .imgDiv div{
+            text-align: center;
+            font-size:20px;
+        }
+        .imgDiv:hover{
+            transform: scale(1.5); 
+            background-color:rgb(61, 217, 238);
+            box-shadow: rgb(61, 217, 238,0.5) 10px 10px 10px 10px,rgb(61, 217, 238,0.5) -10px -10px 50px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style ="text-align: center;color:white;text-shadow: 3px 3px 10px rgb(0, 0, 0,0.8);font-size:40px;">IMAGE GALLERY</h1>
+        <div id ="border-head" >
+            <div id = "img-gallery">
+                <div class = "imgDiv">
+                    <img src = "https://www.teahub.io/photos/full/183-1831668_dora-buji-tamil.jpg">
+                    <div>Dora-Buji</div>
+                </div>
+
+                <div class = "imgDiv"> 
+                    <img src = " https://www.chhotabheem.com/image/catalog/wallpaper/series_03.jpg">
+                    <div>Chota-Bheem</div>
+                </div>
+
+                <div class = "imgDiv">
+                    <img src = " https://i.redd.it/ymyg52mfaar11.jpg">
+                    <div>Jackie-Chan </div>
+                </div>
+                <div class = "imgDiv">
+                    <img src = "https://wallpaperbat.com/img/408370-shinchan-wallpaper.jpg">
+                    <div>Shin-Chan </div>
+                </div>
+                <div class = "imgDiv">
+                    <img src = "https://wallpaperaccess.com/full/3783474.jpg">
+                    <div>Power-Rangers</div>
+                </div>
+                <div class = "imgDiv">
+                    <img src = "https://wallpaperaccess.com/full/2319703.jpg">
+                    <div>Doraemon</div>
+                </div>
+                <div class = "imgDiv">
+                    <img src = "https://wallpaperaccess.com/full/1367507.jpg">
+                    <div>Mickey-Mouse</div>
+                </div>
+                <div class = "imgDiv">
+                    <img src = " https://wallpaperaccess.com/full/1198084.jpg">
+                    <div>Tom & Jerry</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my form</title>
+    <style>
+        body{
+            background:url("https://i.pinimg.com/originals/4d/ef/c5/4defc5b00247ead5c029db590045cdb1.gif");
+            background-repeat:no-repeat;
+            background-size:cover;
+            margin-bottom: 15%;
+        }
+        input[type=search]:focus{
+            background-color: yellow;
+        }
+        #login-content{
+            transform: translate(400px,30px);
+            background-color :rgb(233, 229, 229,0.5);
+            width: 25%;
+            padding:20px 30px;
+        }
+        #register-content{
+            transform: translate(240px,30px);
+            background-color :rgb(233, 229, 229,0.5);
+            width:60%;
+        }
+        .login-input,.register-input{
+            animation:log 2s linear 1;
+        }
+        @keyframes log{
+            0%{
+                transform: translateY(500px);
+            }
+        }
+        .inputL, .inputR{
+            padding:10px 0;
+            outline:none;
+            border:none;
+            background:none;
+            border-bottom:1px solid yellowgreen ;
+            color:white;
+            font-size: 20px;
+        }
+        ::placeholder{
+            color:rgb(197, 189, 189);
+            font-size:15px;
+        }
+        #address::placeholder{
+            color:white;
+        }
+        div{
+            padding:15px;
+        }
+    </style>
+</head>
+<body>
+     
+
+        <!-- btn and instruction -->
+        <div style ="text-align:center;margin-top: 50px;">
+            <input type = "search" size=60; id = "search" placeholder="Search..." autocomplete="off" style = "padding:10px; font-size:20px;border-radius:10px;" required>
+            <input type = "submit" value = "search" id = "searchBtn" style = "padding:10px; font-size:20px;background-color:rgb(57, 169, 235);font-family: monospace;border-radius:10px;">
+            <input type = "reset" value = "Cancel" id = "cancelBtn" style = "padding:10px; font-size:20px;font-family: monospace;border-radius:10px;">
+            <div>
+                <small style ="color:white;text-align: left;">
+                    <pre>
+                                            INTRUCTION :
+                                        
+                                                        <span style="color:yellow;">If you need login form,you should type "where is my login form"</span>
+                                                                                    (or)
+                                                        <span style="color:yellow;">If you need Registerations form, you should type "where is my register form"</span>
+                    </pre>
+                </small>
+            </div>
+        </div>
+   
+    <form action ="calender_script.html" id="myform">
+        <!-- login page  -->
+        <div id ="login-content">
+            <h4 class ="login-input" style= "color:white;background-color:rgb(154, 205, 50,0.8);padding:10px 15px;text-align: center;border-radius:10px;">LOG IN</h4>
+            <div class ="login-input">
+                <input type="text" class ="inputL" placeholder="User Name" required>
+            </div>
+            <div class ="login-input">
+                <input type="password" class ="inputL" placeholder="Password" required>
+            </div>
+            <div class ="login-input">
+                <input type = "checkbox" class ="inputL" name ="Remainder Password" required>
+                <label for="Lpassword" style = "color:white">Remainder Password</label>
+            </div>
+            <div class ="login-input" style="text-align: center;">
+                <input type= "submit" value= "logIn"  style="background-color:rgb(154, 205, 50,0.8);padding:10px;font-size: 20px;color:white;border-radius: 10px;font-family: monospace;">
+            </div>
+        </div> 
+    </form>
+
+    <form>
+        <!-- register page -->
+        <div id ="register-content">
+            <h4 class ="register-input" style= "color:white;background-color:rgb(154, 205, 50,0.8);padding:10px 15px;text-align: center;border-radius:10px;">REGISTER FORM</h4>
+            <div class ="register-input">
+                <input type="text" class ="inputR" name="SName" placeholder="Student's Name" required><span style="color:red">*</span>
+            </div>
+            <div class ="register-input">
+                <input type="text"  class ="inputR" name="FName" placeholder="Father's Name" required><span style="color:red">*</span>
+            </div>
+            <div class ="register-input">
+                <input type="date"  class ="inputR" name="DOB"  style="color:gray" required><span style="color:red">*</span>
+            </div>
+            <div class ="register-input">
+                <input type="radio"  class ="inputR"  name="gender" id="male" value = "male">
+                <label for = "male">Male</label>
+                <input type="radio"  class ="inputR"  name="gender" value = "female">
+                <label for = "male">Female</label>
+            </div>
+            <div class ="register-input">
+                <select name="Degree" id="Degree" style = "width:250px;font-size: 15px;padding:10px;border:none;outline:none;background:none;color:white;background-color:gray ;" required><span style="color:red">*</span>
+                    <option>--Selected Degree--</option>
+                    <optgroup label = "UG">
+                        <option value="B.E">B.E</option>
+                        <option value="B.Tech">B.Tech</option>
+                    </optgroup>
+                    
+                    <optgroup label ="PG">
+                        <option value="M.E">M.E</option>
+                        <option value="M.Tech">M.Tech</option>
+                        <option value="MBA">MBA</option>
+                    </optgroup>  
+                </select>
+            </div>
+            <div  class ="register-input">
+                <select name="Course" id="Course" style = "width:250px;font-size: 15px;padding:10px;border:none;outline:none;background:none;color:white;background-color:gray ;"><span style="color:red">*</span>
+                    <option>--Selected Branch--</option>
+                    <optgroup label = "B.E">
+                        <option value="ECE">ECE</option>
+                        <option value="CSE">CSE</option>
+                        <option value="EEE">EEE</option>
+                    </optgroup>
+                    
+                    <optgroup label ="B.Tech">
+                        <option value="CE">Civil</option>
+                        <option value="MECH">Mech</option>
+                        <option value="Chemical">Chemical</option>
+                    </optgroup>
+                    
+                </select>
+            </div>
+            <div class ="register-input">
+                <input type="tel"  class ="inputR" placeholder="Mobile Number">
+            </div>
+            <div class ="register-input">
+                <input type="email"  class ="inputR" placeholder="Email Id">
+            </div>
+            <div class ="register-input">
+                <div style="position:absolute;left:69%;top:15%;width:100px;height: 100px;background-color: rgb(204, 204, 204,0.5);"></div>
+                <div  style="position:absolute;left:62%;top:32%;">
+                    <input type="file" name="photo" id="photo" value = "Upload photo" style = "width:200px;font-size: 15px;padding:10px;border:none;outline:none;background:none;color:white;background-color:gray ;">
+                </div>
+               
+            </div>
+            <div class ="register-input"  style = "position:absolute;left:40%;top:60%">
+                <textarea cols="50" rows="10" name = "address" id="address" placeholder="Enter your Address" style ="color:white;background-color: rgb(204, 204, 204,0.5);border:none;outline:none"></textarea>
+                
+            </div>
+            <div class ="register-input" style ="text-align: center;">
+                <input type="submit" name="submit" id= "submit" value ="Register "  style="background-color:rgb(154, 205, 50,0.8);padding:10px;font-size: 20px;color:white;border-radius: 10px;font-family: monospace;">
+                <input type="reset" name="reset" id= "reset" value ="Reset"  style="background-color:rgb(154, 205, 50,0.8);padding:10px;font-size: 20px;color:white;border-radius: 10px;font-family: monospace;">
+            </div>
+            
+            
+        </div>
+
+    </form>
+
+    <!-- Error Message -->
+    <div style ="text-align: center; margin-left:30%" id = "errorId">
+        <div style ="width:500px;height:100px;background-color:rgb(197, 189, 189,0.5);">
+            <h1  style = "color:red" >OOPS! ERROR</h1>
+        </div>
+    </div>
+    
+<!-- action -->
+     <script>
+        var search = document.getElementById("search");
+        var login = document.getElementById("login-content");
+        var register = document.getElementById("register-content");
+        var error =document.querySelector("#errorId");
+        error.hidden = true;
+        login.hidden = true;
+        register.hidden = true;
+        function check(){
+            if(search.value == "where is my login form"){
+                login.hidden = false;
+                register.hidden = true;
+                error.hidden = true;
+            }
+            else if(search.value == "where is my register form"){
+                register.hidden = false;
+                login.hidden = true;
+                error.hidden = true;
+            }
+            else{
+                error.hidden = false;
+                login.hidden = true;
+                register.hidden = true;
+            }
+        }
+        document.querySelector("#searchBtn").onclick=check;
+        document.querySelector("#cancelBtn").onclick=function(){
+            login.hidden = true;
+            register.hidden = true;
+            error.hidden = true;
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valid form</title>
+    <style>
+        body{
+            background-color: rgb(245, 222, 179,0.5);
+            margin-bottom:10%
+        }
+        input,select{
+            width:100%;
+            padding:9px;
+            font-size:16px;
+            margin-top: 10px;
+            border-radius: 5px;
+            outline:none;
+            border: none;
+            font-family: monospace;
+        }
+        select{
+            background-color:white;
+        }
+        input:hover,select:hover,#address:hover{
+            background-color:rgb(230, 230, 230);
+            border:2px solid gray;
+        }
+        input:focus,select:focus,#address:focus{
+            border:2px solid red;
+        }
+        label{
+            font-size:20px;
+           font-weight: 600;
+            color:rgb(27, 27, 27);
+        }
+        fieldset{
+            width:50%;
+            height:90%;
+            position:absolute;
+            top:19%;
+            left:24%;
+            right:25%;
+            border-radius: 10px;
+            background-color:rgba(179, 179, 179, 0.5);
+            z-index: -1;
+            padding:10px 20px;
+        }
+        legend{
+            background-color:gray;
+            margin-left:13px;
+            padding:5px 10px;
+            border-radius: 5px;
+            color:white;
+            font-style: italic;
+        }
+        img{
+            width: 100%;
+            opacity:0.4;
+            z-index: -1;
+            position:fixed;
+            top:0;
+        }
+        .errors{
+            color: red; 
+            font-size:18px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src = "https://images.unsplash.com/photo-1555532538-dcdbd01d373d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=831&q=80">
+        <table width ="50%" cellspacing="7" cellpadding="10" style="margin-left: auto;margin-right: auto;">
+            <form onsubmit = "return form()">
+                <caption style ="text-align: center;color:rgb(253, 209, 127);font-style: italic;font-size:30px"><h1>Registration Form</h1></caption>
+                <fieldset>
+                <legend style="background-color:gray;margin-left:13px;padding:5px 10px;border-radius: 5px;">Person Details</legend>
+                <tr>
+                    <td>
+                        <label for ="fname">First Name</label><br/>
+                        <input type = "text" id ="fname" name ="first name" class ="name" autocomplete="off" placeholder="Enter your First Name">
+                        <div id = "first-name"  class = "errors"></div>
+                    </td>
+                    <td>
+                        <label for ="lname">Last Name</label><br/>
+                        <input type = "text" id ="lname" name ="last name" class ="name" autocomplete="off" placeholder="Enter your last Name">
+                        <div id = "last-name"  class = "errors"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for ="age">Age</label><br/>
+                        <input type = "text" id ="age" class = "number-format" maxlength="2"  name ="age">
+                        <div id = "age-div" class = "errors"></div>
+                    </td>
+                    <td>
+                        <label for ="dob">Date-of-Birth</label><br/>
+                        <input type = "date" id ="dob" name ="dob" onclick ="date_validate()">
+                        <div id ="dob-error" class = "errors"></div>
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        <label for ="gender" id ="gender">Gender</label><br/>
+                        <input type = "radio" id ="male" name ="gender" style ="width:15%">
+                        <label for ="male">Male</label>
+                        <input type = "radio" id ="female" name ="gender" style ="width:15%">
+                        <label for ="female">Female</label>
+                        <div id = "gender-div" class = "errors"></div>
+                    </td>
+                    <td>
+                        <label for ="mobile-no">Mobile No</label><br/>
+                        <input type = "text" id ="mobile-no" class = "number-format" name ="Mobile-no" maxlength = "10">
+                        <div id = "mobile" class = "errors"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for ="email">Email Id</label><br/>
+                        <input type = "email" id ="email" name ="Email-id" placeholder = "Mail Address...">
+                        <div id = "email-no" class = "errors"></div>
+                    </td>
+                    <td>
+                        <label for ="city">City</label><br/>
+                        <select id = "city" name = "city" style ="width:105%">
+                            <option>-- Select --</option>
+                            <option value = "madurai">Madurai</option>
+                            <option value ="Virdhunagar">Virdhunagar</option>
+                            <option value ="tirunelveli">Tirunelveli</option>
+                        </select>
+                        <div id = "myCity" class = "errors"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for ="address">Address</label><br/>
+                        <textarea id ="address" cols ="25" rows="6" placeholder="parmanent address..." style ="margin-top: 10px;outline:none;border:none;border-radius: 5px;padding:10px"></textarea>
+                        <div id = "address-error" class = "errors"></div>
+                    </td> 
+                    <td>
+                        <label for ="pincode">Pin Code</label><br/>
+                        <input type = "text" id ="pincode" name ="pincode" placeholder = "626110" maxlength ="6"><br/>
+                        <div id = "pin" class = "errors"></div>
+                        <label for ="district">District</label><br/>
+                        <input type = "text" id ="district" name ="district">
+                        <div id = "district-name" class = "errors"></div>
+                    </td>
+                </tr>
+                </fieldset>
+                <fieldset style ="height:65%;top:113%;">
+                    <legend>LogIn Details</legend>
+                <tr>
+                    <td colspan="2" style ="padding-top:10%">
+                        <label for ="userId">User Id</label><br/>
+                        <input type = "text" id ="userId" name ="user-id" style ="width:100%">
+                        <div id = "userId-error" class = "errors"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for ="password">Password</label><br/>
+                        <input type = "password" id ="password" name ="password" style ="width:100%">
+                        <div id = "password-error" class = "errors"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for ="confirm-password">Confirm Password</label><br/>
+                        <input type = "password" id ="confirm-password" name ="confirm-password" style ="width:100%">
+                        <div id = "con-password-error" class = "errors"></div>
+                    </td>
+                </tr>
+            </fieldset>
+
+                <tr>
+                    <td>
+                        <input type ="submit" id ="submit" name ="submit" value ="Submit" onsubmit = "submit_noti.style.display = 'block';" style ="background-color: rgb(47, 137, 255);color:white;border:1px solid white">
+                    </td>
+                    <td>
+                        <input type ="reset" id ="reset" name ="reset" value ="Reset" style ="background-color: rgb(71, 205, 214);color:white;border:1px solid white">
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </div>
+    <script>
+        var error = document.getElementsByClassName("errors");
+        function form(){
+            var fname = document.getElementById("fname");
+            var lname = document.getElementById("lname");
+            var age = document.getElementById("age");
+            var dob = document.getElementById("dob");
+            var gender = document.getElementById("gender");
+            var maleGender = document.getElementById("male");
+            var femaleGender = document.getElementById("female");
+            var mobile = document.getElementById("mobile-no");
+            var email = document.getElementById("email");
+            var city = document.getElementById("city");
+            var pinCode = document.getElementById("pincode");
+            var address = document.getElementById("address");
+            var district = document.getElementById("district");
+            var userId = document.getElementById("userId");
+            var password = document.getElementById("password");
+            var confirm_password = document.getElementById("confirm-password");
+            var result = true;
+            if(fname.value == ""){
+                result = false;
+                fname.focus();
+                document.getElementById("first-name").innerHTML = "First name cannot be blank"
+            }
+            else if(lname.value == ""){
+                result = false;
+                lname.focus();
+                clear();
+                document.getElementById("last-name").innerHTML = "Last name cannot be blank"
+            }
+            else if(isNaN(age.value)==true || age.value == ""){
+                result = false;
+                age.focus();
+                clear();
+                document.getElementById("age-div").innerHTML = "Age should be Numbers only <br/>and its mandatory";
+            }
+            else if(dob.value == ""){
+                result = false;
+                dob.focus();
+                clear();
+                document.getElementById("dob-error").innerHTML = "Fillout the date of birth"
+            }
+            else if(maleGender.checked == false && femaleGender.checked ==false){
+                result = false;
+                gender.focus();
+               clear();
+                document.getElementById("gender-div").innerHTML = "Gender should select anyone";
+            }
+            else if(isNaN(mobile.value) == true || mobile.value == "") {
+                result = false;
+                mobile.focus();
+                clear();
+                document.getElementById("mobile").innerHTML = "Mobile Number Should be 10 digits<br/> Numbers and its mandatory"; 
+            }
+            else if(email.value == "") {
+                result = false;
+                email.focus();
+                clear();
+                document.getElementById("email-no").innerHTML = "Its mandatory and it should <br/>end with @gmail.com"; 
+            }
+            else if(city.selectedIndex == 0){
+                result = false;
+                city.focus();
+                clear();
+                document.getElementById("myCity").innerHTML = "City Should select anyone";
+            }
+            else if(isNaN(pinCode.value) == true || pinCode.value == "") {
+                result = false;
+                pinCode.focus();
+                clear();
+                document.getElementById("pin").innerHTML = "Its only 6 digits and its required one "; 
+            }
+            
+            else if(address.value == "") {
+                result = false;
+                address.focus();
+                clear();
+                document.getElementById("address-error").innerHTML = "Its required field"; 
+            }
+            else if(district.value == "") {
+                result = false;
+                district.focus();
+                clear();
+                document.getElementById("district-name").innerHTML = "Its required field"; 
+            }
+            else if(userId.value.length == 0 || userId.value.length < 6) {
+                result = false;
+                userId.focus();
+                clear();
+                document.getElementById("userId-error").innerHTML = "its don't empty and fill minimum 6 characters"; 
+            }
+            else if(password.value == "" || password.value.length < 8) {
+                result = false;
+                password.focus();
+                clear();
+                document.getElementById("password-error").innerHTML = "its don't empty and fill minimum 8 characters"; 
+            }
+            else if(confirm_password.value == ""  || confirm_password.value.length < 8) {
+                result = false;
+                confirm_password.focus();
+                clear();
+                document.getElementById("con-password-error").innerHTML = "its don't empty and fill minimum 8 characters";
+            }
+            else if(confirm_password.value !== "" ){
+                if(password.value !== confirm_password.value){
+                    result = false;
+                    confirm_password.focus();
+                    clear();
+                    document.getElementById("con-password-error").innerHTML = "its don't empty and fill minimum 8 characters<br/>or password and confirm password both should be equal";
+                }
+            }
+            return result;
+       
+   
+    }
+    function clear(){
+        for(var i=0;i<error.length;i++){
+                    error[i].innerHTML = "";
+        }
+    }
+
+   function date_validate(){
+    var date = new Date();
+    var month = date.getMonth();
+    var date_arr = date.getDate();
+    var year = date.getFullYear(); 
+    if(date_arr < 10 ){
+        date_arr = "0" +date_arr;
+    }
+    if(month <9){
+        month = "0" +month;
+    }
+    var result = year +"-"+(month+1)+"-"+date_arr;
+    var dob = document.getElementById("dob").max = result;
+   }   
+    </script>
+    
+</body>
+</html>

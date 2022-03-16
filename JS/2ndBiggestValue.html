@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="click" onclick ="big()"><br/>
+    Original Array<div id = "original"></div>
+    Second Biggest Value <div id ="big"></div>
+    <script>
+        function big(){
+            var array =[9,5,36,84,67,64];
+            document.getElementById("original").innerHTML = array
+            for( var i =0 ; i < array.length ; i++ ){
+                for( var j =i+1 ; j < array.length ; j++ ){
+                    if(array[i]>array[j]){
+                       var a = array[i];
+                        array[i] = array[j];
+                        array[j] = a;
+                    }
+                }
+            }
+            document.getElementById("big").innerHTML = array[array.length-2];
+        }
+    </script>
+    <!-- <script>
+            function big(){
+            var array =[10,5,36,84,67,64];
+            document.getElementById("original").innerHTML = array;
+            var myNum = 0;
+            for( var i =0 ; i < array.length ; i++ ){
+                if(array[i]>myNum){
+                    myNum = array[i];
+                }
+            }
+            document.getElementById("big").innerHTML =myNum;
+           
+        }
+    </script> -->
+</body>
+</html>

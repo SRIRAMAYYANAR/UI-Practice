@@ -1,0 +1,98 @@
+body{
+    color:white;
+    background-color: rgb(187, 255, 162);
+}
+#row1{
+    background-image: url('https://images.unsplash.com/photo-1555532538-dcdbd01d373d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=831&q=80') ;
+    background-size: cover;
+    padding:50px;   
+}
+@media screen and (min-width:1000px){
+    #row1{
+        margin: 50px 1.5in;
+    }
+}
+
+#topic{
+    margin-bottom: 30px; 
+    font-weight: 600; 
+    font-family: 'Satisfy'; 
+}
+label{
+    font-family: 'monospace';
+    font-size: 20px;
+}
+label span{
+  color:yellow;
+}
+
+input[placeholder]{
+    font-family: 'times new roman';
+    font-size: 20px;
+}
+input[type=radio]{
+    border:0px;
+    width:20px;
+    height:20px;
+}
+#button{
+    margin-left: 40%;
+}
+
+
+input[type]:hover{
+    background-color: rgb(204, 203, 203);
+}
+input[type]:focus{
+    border:3px solid #ff0000;
+}     
+
+#alt{
+    position:absolute;
+    top:50%;
+    bottom:15%;
+    font-size :20px;
+    font-family:"monospace";
+    /* background-image: url("http://jobulitech.com/_Images/jobuliminilogo.png");
+    background-repeat: no-repeat;
+    background-position: top; */
+    background-color: white;
+    padding :60px 1in;
+    text-align: center;
+    margin:0 30%;
+    border-radius: 20px;
+    color:black;
+}
+
+
+
+/* calender css */
+.heading{
+    background-color:rgb(101, 101, 218) ;
+    color:white;
+    font-size: 20px;
+    padding:25px;
+    text-align:start; 
+}
+td{
+    padding : 10px;
+    background-color: white;
+    color:black;
+    border: 2px solid #ccc;
+} 
+td:hover{
+    background-color:#ccc;
+}
+#calender{
+    background-color:#ccc;
+    position:absolute;
+    top:57%;
+    left:52%;
+}
+#ok{
+    text-align: center;
+    padding: 0px;
+}
+        
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form onsubmit="return sri()">
+    <input type ="text" id ="name" name="name">
+    <input type= "submit" id ="submit" value="submit">
+</form>
+    <div id="f"></div>
+    <script>
+        function sri(){
+            var a= document.getElementById("name").value;
+            var ret=true;
+        if(a.length == 0){  
+            ret=false; 
+            document.getElementById("f").innerHTML ="error";    
+        }
+         return ret;
+        }
+    </script>
+</body>
+</html>

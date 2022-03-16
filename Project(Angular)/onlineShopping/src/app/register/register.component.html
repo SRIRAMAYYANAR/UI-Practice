@@ -1,0 +1,38 @@
+<div id = "register-content">
+    <h3 style="position: absolute;left:45%;font-weight:bold;font-size:20px">Create an Account</h3>
+<button id="mybtn" mat-button mat-dialog-close><mat-icon>close</mat-icon></button> 
+    <form #myForm="ngForm" (ngSubmit)="register()" style="margin-top:10px;">
+        <mat-form-field appearance="fill" class="name">
+            <mat-label>First Name</mat-label>
+            <input matInput [formControl]="fname" [(ngModel)]="reg.fname" required >
+            <mat-error *ngIf="fname.invalid">{{fnameError}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="name"> 
+            <mat-label>Last Name</mat-label>
+            <input matInput name="lname" [(ngModel)]="reg.lname">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email Id</mat-label>
+            <input matInput placeholder="abcd@gmail.com" [formControl]="email"[(ngModel)]="reg.email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" name="pwd" [(ngModel)]="reg.pwd" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Confirm password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div style="text-align:center">
+             <input type ="submit" class="btn btn-primary" id="reg-sub" value = "Register"/>
+          </div>
+    </form>
+    <h3 style = "text-align:center;margin-top:20px">{{res}}</h3>
+</div>

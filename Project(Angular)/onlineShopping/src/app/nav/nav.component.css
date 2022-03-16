@@ -1,0 +1,27 @@
+#merchantApp,#adminApp{
+  	   display: none;
+     width:10rem;
+     z-index:1;
+     position:absolute;
+}
+#marchant:hover #merchantApp, #admin:hover #adminApp{
+	display: block;
+}
+#adminApp{
+	 width:15rem !important;
+}
+.list-group-item{
+   padding:15px 0;
+   text-align:center;
+   cursor: pointer;
+}
+#nav{
+   z-index: 1;
+   position: sticky;
+   top: 0;
+   width:100%;
+   background-color:rgb(28, 81, 224,0.8);
+}
+.mynav:hover .nav-link{
+   color:black !important;
+}

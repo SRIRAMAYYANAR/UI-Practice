@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="test">
+    <pre>
+
+       S
+       R
+       I
+       R
+       A
+       M
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       dfgg
+       fghfhh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+    </pre>
+    </div>
+    <form action = "#test">
+        <input type ="userName" name ="userName" placeholder="userName">
+        <input type="submit" value = "Submit">
+    </form>
+
+    <div id = "register-content" >
+			<form id ="register-form" onsubmit = "return reg_sub()">
+				<input type="text" class ="reg-input" name ="rId" placeholder="userId"  required/><br/>
+				 <input type="text" class ="reg-input" name ="fName" placeholder="First Name"  required/><br/>
+		         <input type="text"  class ="reg-input" name ="lName" placeholder="last Name"/><br/>
+		         <input type="email"  class ="reg-input" name="email" placeholder="Email Id" required/><br/>
+		         <input type="password" id = "new-password" class ="reg-input" name="password" placeholder="Enter password"  required/><br/>
+		         <input type="password" id = "con-password" class ="reg-input" name="con-password" placeholder="confirm password"required/><br/>
+		         <input type="submit" id = "reg-sub" class ="btn"  value ="Register"/>
+		         <div id = "reg-error"></div>
+			</form>
+		</div>
+        <script>
+
+var reg_new = document.getElementById("new-password");
+var reg_con = document.getElementById("con-password");
+	var reg_error = document.getElementById("reg-error");
+   
+	function reg_sub(){
+      
+		if(reg_new.value == reg_con.value){
+			reg_error.innerHTML = "";
+			return true;
+		}
+		else{
+			reg_error.innerHTML = "sfdfdg";
+			return false;
+		}
+	}
+        </script>
+</body>
+</html>

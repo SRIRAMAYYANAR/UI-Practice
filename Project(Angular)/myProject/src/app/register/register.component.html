@@ -1,0 +1,10 @@
+<h3>Register</h3>
+<form #myForm = "ngForm" (ngSubmit) = "reg()">
+    <input type="text" name="username" [(ngModel)]="logData.uname">
+    <input type="text" name="password" [(ngModel)]="logData.pwd">
+    <input type="submit" value="Register">
+</form>
+
+{{logData.uname}}
+{{logData.pwd}} 
+{{myForm.value|json}}

@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MY SITE</title>
+    </head>
+    <style>
+        body{
+            background-image: url('https://www.royalenfield.com/content/dam/royal-enfield/india/motorcycles/classic-350/gallery/thumbnail/gallery-1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment:fixed;
+            background-position: center;
+        }
+        #head{
+            position:fixed;
+            width:98.5%;
+            height:26%;
+            border:2px 	#D3D3D3;
+        }
+        .logo{
+            position: absolute;
+            left: 1%;
+            top: 10px;
+        }
+        .header{
+            color: #da2e28;
+            font-family: italic;
+            text-align: center;
+            font-size: 25PX;
+            text-shadow: 3px 6px 6px #FFB300;
+            /* transform: translateY(80px); */
+        }
+        .navbar{
+            overflow: hidden;
+            background-color: #FFC0CB70;
+        }
+        .navbar li{
+            display:inline;
+            padding-right: 30px;
+            font-size:20px;
+            font-weight:bold;
+        }
+        .navbar a{
+            padding: 14px 20px; 
+            text-decoration: none;
+            color:whitesmoke; 
+        }
+        .navbar a:hover{
+            background-color: #ddd;
+            color: black;
+        }
+        .login:target{
+            display: block ;
+        }
+       
+    </style>
+    <body>
+        <div id="head">
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0zs0z9peE8AeDEWaQzIl8rwRceNR8dYcWmQ&usqp=CAU"
+                height="100px" width="100px" style="border-radius: 150px;">
+            </div>
+            <div class="header">
+                <h1><b>ROYAL ENFIELD</b></h1>
+            </div>
+            <div class="navbar">
+                <ul>
+                   <li id="home"> <a href="#">HOME</a></li>
+                   <li> <a href="#">BIKES</a></li>
+                    <li> <a href="#">SERVICES</a></li>
+                    <li> <a href="#">CONTACT US</a></li>
+                    <li> <a href="#">ABOUT US</a></li>
+                    <!-- <li> <iframe src="http://127.0.0.1:5500/task/kfc/pavi_website.html/login.html" height="100px" width="100px">LOGIN </iframe></li> -->
+                    <li class="login"><a href="#">LOGIN</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </body>
+</html>

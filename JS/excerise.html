@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            font-size:20px;
+            line-height:50px;
+        }
+    </style>
+</head>
+<body>
+    <table cellspacing="0" cellpadding="10">
+        <tr>
+            <td>
+                <label for="rev-Btn">If you need Reverse a Number </label>
+            </td>
+            <td>
+                <input type="button" id ="rev-Btn" value="Click">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="revArray-Btn">If you need array reverse  </label>
+            </td>
+            <td>
+                <input type="button" id ="revArray-Btn" value="Click">
+            </td>
+        </tr>
+    </table>
+    <div id="result"></div>
+    <script>
+        var reverse = document.getElementById("rev-Btn");
+        var reverse_array = document.getElementById("revArray-Btn");
+        var result = document.getElementById("result");
+
+        reverse.onclick = function(){
+            var num = prompt("Enter any atleast 2 digits Number");
+            var number =""
+            for( var j =num.length-1 ; j>=0; j--){
+                number += num[j];
+            }
+            result.innerHTML = "Input Number : " +num+"<br/>Reversing Number : "+ number;
+        }
+
+        reverse_array.onclick = function (){
+            var array = [1,2,3,4,5];
+            var arr=[];
+                for( var i=0; i <array.length ; i++ ){
+                  arr[i]=array[(array.length-1)-i];
+                }
+            result.innerHTML =arr;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+</head>
+<body style="text-align:center;">
+    <div style="margin:0 35%;background-color:yellow;position:absolute;">
+        <table  border= "2" cellspacing="0" cellpadding="10">
+            <caption style="font-size:30px;padding-bottom:20px;background-color:rgb(244, 255, 223)">
+                CALENDER
+            </caption>
+            <thead>
+                <tr>
+                    <th colspan="7" style ="background-color: aquamarine;">November 2021</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th style ="color:rgb(248, 95, 95);">Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th style ="color:rgb(248, 95, 95);">Sat</th>
+                </tr>
+                <tr>
+                    <td style = "background-color: #ccc;color:rgb(248, 134, 134);">31</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td style ="color:red;">6</td>
+                </tr>
+                <tr>
+                    <td style ="color:red;">7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td style ="color:red;">13</td>
+                </tr>
+                <tr>
+                    <td style ="color:red;">14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td style ="color:red;">20</td>
+                </tr>
+                <tr>
+                    <td style ="color:red;">21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td style ="color:red;">27</td>
+                </tr>
+                <tr>
+                    <td style ="color:red;">28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td style = "background-color: #ccc;color:gray;">1</td>
+                    <td style = "background-color: #ccc;color:gray;">2</td>
+                    <td style = "background-color: #ccc;color:gray;">3</td>
+                    <td style = "background-color: #ccc;color:rgb(248, 134, 134);">4</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7" id = "footer"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <script>
+            // var month =["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+            // var days = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"]
+            var date = new Date();
+            var month_arr = date.getMonth();
+            var date_arr = date.getDate();
+            console.log(date_arr)
+            var year_arr = date.getFullYear();
+            // var day = date.getDay();
+            // console.log(day);
+            if(date_arr < 10){
+                date_arr = "0" +date_arr;
+            }
+            // foot.innerHTML ="Day : " +days[day]+"<br/> Date : "+ month[month_arr] + " " + date_arr+ ", " + year_arr; 
+
+    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:rgba(38, 156, 150, 0.4);
+        }
+         div{
+            background-color:rgb(184, 180, 180,0.5);
+            padding:50px;
+            width:50%;
+            height:50%;
+            border-radius:10px;
+            margin:50px auto;
+        }
+        .userInput{
+            width: 96%;
+            padding:5px;
+            font-size:35px;
+            text-align: right;
+            border:none;
+            outline:none;
+            background: none;
+        }
+        .inputOp,.inputBtn{
+            width:100%;
+            padding:12px 0;
+            font-size:20px;
+            border-radius: 10px;
+            border: 5px groove gray;
+        }
+        .inputOp{
+            background-color:rgb(12, 148, 158,0.7);
+        }
+    </style>
+</head>
+<body>
+    
+    <div id ="calci" >
+        <h1 style ="font-style: italic;color:rgb(255, 0, 85);font-size:50px;text-align: right;">My C@lci</h1>
+        <table style="border:2px solid black;width:70%;height:100%;border-radius: 10px;margin:0 auto">
+            
+            <form id="form">
+            <!-- user inputs -->
+            <tr class = "cal-head">
+                <td class = "head-data" colspan ="4" style ="border-bottom:2px solid rgb(175, 175, 175)">
+                    <input type= "text" id = "store-val" class ="userInput" name ="store value" readonly><br/>
+                    <input type= "text" id = "user-val" class ="userInput" name ="user value" value ="0" autocomplete="off">
+                </td>
+            </tr>
+
+            <!-- buttons -->
+            <tr class="cal-body">
+                <td class = "user-data">
+                    <button type ="button" id="clear" class ="inputOp" name ="clear" onclick ="cl(0)">C</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="divide" class ="inputOp" name="divide" value ="/" onclick="ans('/')" style ="padding:12px 4px">/</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="multiply" class ="inputOp" name="multiply" value ="X" onclick="ans('x')">X</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="cut" class ="inputOp" name="cut" value ="x" onclick ="ct()" style ="padding:12px 2px">D</button>
+                </td>
+            </tr>
+            <tr class="cal-body">
+                <td class = "user-data">
+                    <button type ="button" id="seven" class ="inputBtn" name="seven" value ="7" onclick ="myInput(7)">7</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="eight" class ="inputBtn" name="eight" value ="8"  onclick ="myInput(8)">8</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="nine" class ="inputBtn" name="nine" value ="9"  onclick ="myInput(9)">9</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="subtract" class ="inputOp" name="subtract" onclick="ans('-')" value ="-">-</button>
+                </td>
+            </tr>
+            <tr class="cal-body">
+                <td class = "user-data">
+                    <button type ="button" id="four" class ="inputBtn" name="four" value ="4" onclick ="myInput(4)">4</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="five" class ="inputBtn" name="five" value ="5" onclick ="myInput(5)">5</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="six" class ="inputBtn" name="six" value ="6" onclick ="myInput(6)">6</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="addition" class ="inputOp" name="addition" onclick ="ans('+')" value ="+" >+</button>
+                </td>
+            </tr>
+            <tr class="cal-body">
+                <td class = "user-data">
+                    <button type ="button" id="one" class ="inputBtn" name="one" value ="1" onclick ="myInput(1)">1</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="two" class ="inputBtn" name="two" value ="2" onclick ="myInput(2)">2</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="three" class ="inputBtn" name="three" value ="3" onclick ="myInput(3)">3</button>
+                </td>
+                <td class = "user-data" rowspan="2" >
+                    <button type ="button" id="equal" class ="inputOp" name="equal" onclick ="equi()" value ="=" style="padding:35px 0px;font-size:30px;font-weight:700;background-color: rgb(0, 119, 255);">=</button>
+                </td>
+            </tr>
+            <tr class="cal-body">
+                <td class = "user-data">
+                    <button type ="button" id="modulus" class ="inputOp" name="modulus" onclick ="ans('%')" value="%">%</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="zero" class ="inputBtn" name="zero"  onclick= "myInput('0')" value="0">0</button>
+                </td>
+                <td class = "user-data">
+                    <button type ="button" id="dot" class ="inputOp" onclick= "myInput('.')" name="dot" style="background-color: rgb(194, 193, 193);font-weight: bold;" value=".">.</button>
+                </td>
+            </tr>
+        </form>
+        </table>
+
+    <script>
+            var userValue = document.getElementById("user-val");
+            var storeValue = document.getElementById("store-val");
+
+            // number Input
+            function myInput(val){
+                if(userValue.value == 0){
+                    userValue.value =val;
+                }else{ 
+                    userValue.value += val;
+                }
+            }
+
+            // clear function
+            function cl(){
+                userValue.value =0;
+                storeValue.value ="";
+            }
+
+            // delete value
+            function ct(){
+                var userval = userValue.value;
+                var storeVal =storeValue.value;
+                var userLength = userval.length-1;
+                userValue.value = userval.substr(0,userLength);
+                if(userValue.value == 0 && storeValue.value != ""){
+                    var storeData = storeVal.substr(0,storeVal.length-1);
+                    userValue.value = storeData;
+                    storeValue.value = "";
+                }
+            }
+
+            // common function for all
+            function comm(){
+                var userval = userValue.value;
+                var userLength = userval.length-1;
+                storeValue.style.color ="gray";
+                if(userValue.value == 0 && storeValue.value ==""){
+                    storeValue.value ="";
+                    userValue.value =0;
+                }
+            }
+
+            // result codition
+            function ans(myVal){
+                if(userValue.value != 0 && storeValue.value !=0 && isNaN(userValue.value)==false){
+                    console.log(storeValue.value[storeValue.value.length-1]);
+                    if(storeValue.value[storeValue.value.length-1] == "+"){
+                        storeValue.value = parseFloat(storeValue.value) + parseFloat(userValue.value)+ myVal;
+                    }
+                    if(storeValue.value[storeValue.value.length-1] == "-"){
+                        storeValue.value = parseFloat(storeValue.value) - parseFloat(userValue.value)+ myVal;
+                    }
+                    if(storeValue.value[storeValue.value.length-1] == "*"){
+                        storeValue.value = parseFloat(storeValue.value) * parseFloat(userValue.value)+ myVal;
+                    }
+                    if(storeValue.value[storeValue.value.length-1] == "/"){
+                        storeValue.value = parseFloat(storeValue.value) / parseFloat(userValue.value)+ myVal;
+                    }
+                    if(storeValue.value[storeValue.value.length-1] == "%"){
+                        storeValue.value = parseFloat(storeValue.value) % parseFloat(userValue.value)+ myVal;
+                    }
+                    userValue.value =0;
+                }
+                else if(userValue.value != 0 && isNaN(userValue.value)==false){
+                    storeValue.value = parseFloat(userValue.value) + myVal;
+                    userValue.value =0;
+                }
+                else if(userValue.value ==0){
+                    userValue.value =storeValue.value.substr(0,storeValue.value.length-1);
+                    storeValue.value ="";
+                }
+                else{
+                  alert("please check your inputs");
+                }
+                comm();
+                
+            }
+            // equal to btn
+            function equi(){
+                var storeVal =storeValue.value;
+                var storeData = parseFloat(storeVal.substr(0,storeVal.length-1));
+                var userData = parseFloat(userValue.value);
+                if(isNaN(userValue.value)==false){
+                    if(storeVal.includes("+")==true){
+                        userValue.value = storeData +userData;
+                        storeValue.value="";
+                        if(userValue.value != 0 && storeValue.value !=0 && isNaN(userValue.value)==false){
+                    storeValue.value = parseFloat(storeValue.value) + parseFloat(userValue.value)+ myVal;
+                    userValue.value =0;
+                }
+                    }
+                    else if(storeVal.includes("-")==true){
+                        userValue.value = storeData - userData;
+                        storeValue.value="";
+                    }
+                    else if(storeVal.includes("x")==true){
+                        userValue.value = storeData*userData;
+                        storeValue.value="";
+                    }
+                    else if(storeVal.includes("/")==true){
+                        userValue.value = storeData / userData;
+                        storeValue.value="";
+                    }
+                    else if(storeVal.includes("%")==true){
+                        userValue.value = storeData % userData;
+                        storeValue.value="";
+                    }
+                }
+                else{
+                    alert("please check your inputs");
+                }  
+            }
+    </script>
+</body>
+</html>

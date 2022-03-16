@@ -1,0 +1,12 @@
+
+<p>Login  FORM</p>
+
+<form (ngSubmit)="logans(myreg)" #myreg="ngForm">
+   User_Name:<input type="text" name="uname" [(ngModel)]="logData.uname">
+   Password: <input type="password" name="pwd" [(ngModel)]="logData.pwd">
+    <input type="submit" value="login">
+</form>
+
+{{logData.uname}}
+{{logData.pwd}}
+{{myreg.value}}
